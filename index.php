@@ -13,7 +13,7 @@ $f3 = require('../../AboveWebRoot/fatfree-master-3.7/lib/base.php');
 // autoload Controller class(es) and anything hidden above web root, e.g. DB stuff
 $f3->set('AUTOLOAD','autoload/;../../AboveWebRoot/autoload/');
 
-$db = DatabaseConnection::connect();		// defined as autoloaded class in AboveWebRoot/autoload/
+$db = DatabaseConnection::connectv2();		// defined as autoloaded class in AboveWebRoot/autoload/
 $f3->set('DB', $db);
 $f3->get('DB')->exec("set sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';");
 
