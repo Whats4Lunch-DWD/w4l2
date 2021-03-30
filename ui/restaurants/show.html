@@ -1,0 +1,53 @@
+<section class="content">
+    <div class="main-content container">
+        <h2>{{ @result.restaurant.restaurant_name }}</h2>
+
+        <h3>Menu</h3>
+        <check if="{{ @result.menu }}">
+            <set ctr="{{ 0 }}" />
+            <check if="{{ @ctr }}">
+                <true></true>
+                <false><div class="columns"></false>
+            </check>
+            <repeat group="{{ @result.menu }}" value="{{ @result.menu }}" counter="{{ @ctr }}">
+                <div class="column is-one-third">
+                    <div class="card">
+                        <div class="card-image">
+                        <figure class="image is-4by3">
+                            <check if="{{ @result.menu.image }}">
+                                <true>
+                                    <img src="https://hazrulazhar.edinburgh.domains/whats4lunch/ui/images/restaurants/{{ trim(@result.menu.restaurant_id) }}/{{ trim(@result.menu.image) }}" alt="{{ trim(@result.menu.dish_name) }} image">
+                                </true>
+                                <false>
+                                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="{{ trim(@result.menu.image) }} image">
+                                </false>
+                            </check>
+                        </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="c-title is-4">{{ trim(@result.menu.dish_name) }}</p>
+                            <p class="c-description is-4">{{ trim(@result.menu.description) }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-footer-item">${{ trim(@result.menu.price) }}</div>
+                            <div class="card-footer-item"><a href="{{ @BASE }}/cart/add/{{ @result.menu.id }}"><img src="{{ @BASE }}/ui/images/add-to-shopping-cart.png" alt="add to cart" /></a></div>
+                        </div>
+                    </div>
+                </div>
+                <check if="{{ @ctr%3 }}">
+                    <true></true>
+                    <false>
+                        <check if="{{ @result.total_menu_items == @ctr }}">
+                            <true>
+                                </div>
+                            </true>
+                            <false>
+                                </div><div class="columns">
+                            </false>
+                        </check>
+                    </false>
+                </check>
+            </repeat>
+        </check>
+    </div>
+</section>

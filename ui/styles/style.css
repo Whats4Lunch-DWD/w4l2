@@ -1,0 +1,149 @@
+.navbar-burger {
+    margin-top: -52px;
+}
+
+.myhero {
+    background: url("../images/hero2.png") rgba(0, 0, 0, 0.25) 50% 50% !important;
+    background-size:cover;
+    background-blend-mode: multiply;
+}
+
+.hero {
+    text-align: center;
+}
+
+h2.title {
+    text-align: center;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 49px;
+    /* identical to box height */
+    color: ##221F20;       
+}
+
+span.sub-title {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 38px;
+    color: #221F20;
+    display: block;
+}
+
+p.title {
+    color: #fff;
+}
+
+.card-content p.title {
+    color: #363636 !important;
+}
+
+.searchbtn {
+    margin: auto auto;
+}
+
+.searchbtn button {
+    width: 150px;
+}
+
+.content {
+    background: url("../images/background.png") -120px -120px;
+    text-align: center;
+    margin-bottom: 0 !important;
+}
+
+.core-values {
+    padding-top: 100px;
+    padding-bottom: 100px; 
+    height: auto;
+    text-align: center;
+}
+
+span.sub-icon {
+    text-align: center;
+    margin: auto auto;
+    display: block;
+}
+
+span.sub-content {
+    width: 300px;
+    display: block;
+    text-align: center;
+    margin: auto auto;
+    color: #808080;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.select {
+    display: block !important;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+select.home-select {
+    width: 100% !important;
+}
+
+.main-content {
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+div.is-left > p {
+    text-align: left;
+}
+
+.c-title {
+    font-weight: 600;
+    color: #221F20;
+}
+
+.c-description {
+    font-weight: normal;
+    color: #808080;
+}
+
+
+.cart, .payment, .delivery-address {
+    background-color: #fff;
+}
+
+.cart, .delivery-address {
+    margin-right: 10px;
+}
+
+.delivery-address {
+    margin-top: 10px;
+}
+
+.cart > *, .payment > *, .delivery-address > * {
+    text-align: left !important;
+}
+
+.cart .delete_item {
+    width: 16px;
+    height: 16px;
+}
+
+footer.footer {
+    padding: 2rem 1.5rem 2em !important;
+    background: #221F20;
+}
+
+footer.footer .container {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 44px;
+    /* identical to box height, or 137% */
+    color: rgba(255, 255, 255, 0.7);
+}

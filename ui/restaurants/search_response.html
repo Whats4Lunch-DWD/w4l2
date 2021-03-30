@@ -1,0 +1,229 @@
+<section class="section myhero">
+    <section class="hero">
+        <div class="hero-body">
+            <p class="title">Get your lunch according to your diet and allergies without having to think</p>
+            <form id="formGetRestos" name="formGetRestos" method="post" action="{{ @BASE }}/">
+            <p>
+                <div class="columns field">
+                    <div class="column control">
+                        <input id="location" name="location" class="input" type="text" placeholder="Enter your Singapore address or postal code." value="{{ @query.location }}">
+                        <div class="dropdown-menu" id="location-menu"></div>
+                    </div>
+                    <div class="column control">
+                        <input class="input" placeholder="Enter a dish you'd like." id="query" name="query" type="text" value="{{ @query.query }}" />
+                    </div>
+                </div>
+                <div class="columns field">
+                    <div class="column control">
+                        <div class="select">
+                            <select id="diet" name="diet" class="home-select">
+                                <option disabled="disabled" selected="selected" hidden="hidden">Select a diet restriction...</option>
+                                <check if="{{ @query.diet == 'Halal' }}">
+                                    <true>
+                                        <option selected="selected">Halal</option>
+                                    </true>
+                                    <false>
+                                        <option>Halal</option>
+                                    </false>
+                                </check>
+                                <check if="{{ @query.diet == 'Keto' }}">
+                                    <true>
+                                        <option selected="selected">Keto</option>
+                                    </true>
+                                    <false>
+                                        <option>Keto</option>
+                                    </false>
+                                </check>
+                                <check if="{{ @query.diet == 'Kosher' }}">
+                                    <true>
+                                        <option selected="selected">Kosher</option>
+                                    </true>
+                                    <false>
+                                        <option>Kosher</option>
+                                    </false>
+                                </check>
+                                <check if="{{ @query.diet == 'No Beef' }}">
+                                    <true>
+                                        <option selected="selected">No Beef</option>
+                                    </true>
+                                    <false>
+                                        <option>No Beef</option>
+                                    </false>
+                                </check>
+                                <check if="{{ @query.diet == 'Vegan' }}">
+                                    <true>
+                                        <option selected="selected">Vegan</option>
+                                    </true>
+                                    <false>
+                                        <option>Vegan</option>
+                                    </false>
+                                </check>
+                                <check if="{{ @query.diet == 'Vegetarian' }}">
+                                    <true>
+                                        <option selected="selected">Vegetarian</option>
+                                    </true>
+                                    <false>
+                                        <option>Vegetarian</option>
+                                    </false>
+                                </check>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="column control">
+                        <div class="select">
+                            <select id="allergy" name="allergy" class="home-select">
+                                <option disabled="disabled" selected="selected" hidden="hidden">Select an allergen restriction...</option>
+                                <check if="{{ @query.allergy == 'Corn' }}">
+                                    <true>
+                                        <option selected="selected">Corn</option>
+                                    </true>
+                                    <false>
+                                        <option>Corn</option>
+                                    </false>
+                                </check>
+                                <check if="{{ @query.allergy == 'Egg' }}">
+                                    <true>
+                                        <option selected="selected">Egg</option>
+                                    </true>
+                                    <false>
+                                        <option>Egg</option>
+                                    </false>
+                                </check>
+                                <check if="{{ @query.allergy == 'Fish' }}">
+                                    <true>
+                                        <option selected="selected">Fish</option>
+                                    </true>
+                                    <false>
+                                        <option>Fish</option>
+                                    </false>
+                                </check>
+                                <check if="{{ @query.allergy == 'Meat' }}">
+                                    <true>
+                                        <option selected="selected">Meat</option>
+                                    </true>
+                                    <false>
+                                        <option>Meat</option>
+                                    </false>
+                                </check>
+                                <check if="{{ @query.allergy == 'Milk' }}">
+                                    <true>
+                                        <option selected="selected">Milk</option>
+                                    </true>
+                                    <false>
+                                        <option>Milk</option>
+                                    </false>
+                                </check>
+                                <check if="{{ @query.allergy == 'Peanut' }}">
+                                    <true>
+                                        <option selected="selected">Peanut</option>
+                                    </true>
+                                    <false>
+                                        <option>Peanut</option>
+                                    </false>
+                                </check>
+                                <check if="{{ @query.allergy == 'Shellfish' }}">
+                                    <true>
+                                        <option selected="selected">Shellfish</option>
+                                    </true>
+                                    <false>
+                                        <option>Shellfish</option>
+                                    </false>
+                                </check>
+                                <check if="{{ @query.allergy == 'Soy' }}">
+                                    <true>
+                                        <option selected="selected">Soy</option>
+                                    </true>
+                                    <false>
+                                        <option>Soy</option>
+                                    </false>
+                                </check>
+                                <check if="{{ @query.allergy == 'Tree Nut' }}">
+                                    <true>
+                                        <option selected="selected">Tree Nut</option>
+                                    </true>
+                                    <false>
+                                        <option>Tree Nut</option>
+                                    </false>
+                                </check>
+                                <check if="{{ @query.allergy == 'Wheat' }}">
+                                    <true>
+                                        <option selected="selected">Wheat</option>
+                                    </true>
+                                    <false>
+                                        <option>Wheat</option>
+                                    </false>
+                                </check>
+                                <check if="{{ @query.allergy == 'FPIES' }}">
+                                    <true>
+                                        <option selected="selected">FPIES</option>
+                                    </true>
+                                    <false>
+                                        <option>FPIES</option>
+                                    </false>
+                                </check>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <div class="control searchbtn">
+                        <button class="button is-primary" name="choicestyle" value="3choices">Give me 3 choices</button>
+                        <button class="button is-black" name="choicestyle" value="surprise">Surprise Me!</button>
+                    </div>
+                </div>
+            </p>
+            </form>
+        </div>
+    </section>
+</section>
+<section class="content">
+    <div class="main-content container restaurants">
+        <h2>Results for {{ @query.diet }} {{ @query.query }} that contains no {{ @query.allergy }} near {{ @query.location }}</h2>
+        <check if="{{ @results }}">
+            <true>
+                <set ctr="{{ 0 }}" />
+                <check if="{{ @ctr }}">
+                    <true></true>
+                    <false><div class="columns"></false>
+                </check>
+                    <repeat group="{{ @results }}" value="{{ @record }}" counter="{{ @ctr }}">
+                        <div class="column is-one-third">
+                            <div class="card">
+                                <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <check if="{{ @record.image }}">
+                                        <true>
+                                            <img src="https://hazrulazhar.edinburgh.domains/whats4lunch/ui/images/restaurants/{{ trim(@record.image) }}" alt="{{ trim(@record.image) }} image">
+                                        </true>
+                                        <false>
+                                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="{{ trim(@record.image) }} image">
+                                        </false>
+                                    </check>
+                                </figure>
+                                </div>
+                                <div class="card-content">
+                                    <p class="c-title is-4"><a href="https://hazrulazhar.edinburgh.domains/whats4lunch/restaurants/show/{{ trim(@record.restaurant_id) }}">{{ trim(@record.restaurant_name) }}</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <check if="{{ @ctr%3 }}">
+                            <true></true>
+                            <false>
+                                <check if="{{ @records.total_results == @ctr }}">
+                                    <true>
+                                        </div>
+                                    </true>
+                                    <false>
+                                        </div><div class="columns">
+                                    </false>
+                                </check>
+                            </false>
+                        </check>
+                    </repeat>
+            </true>
+            <false>
+                No restaurants are available.
+            </false>
+        </check>
+    </div>
+</section>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ @html_title }}</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="{{@BASE}}/ui/styles/style.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </head>
+   <body>
+      <div class="header">
+         <header class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+               <div class="navbar-brand">
+                  <a class="navbar-item" href="{{@BASE}}"><img src="{{@BASE}}/ui/images/logo.png" /></a>
+               </div>
+               <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mynav">
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
+                </a>
+               <div id="mynav" class="navbar-menu">
+                  <div class="navbar-end">
+                     <a class="navbar-item" href="https://uoe-my.sharepoint.com/:b:/g/personal/s2138808_ed_ac_uk/ET2heQGD0D1JijbpW9ELL-cBFu5_T9LiallkcXZAMW7Iqw?e=4NuNec">Report</a>
+                     <a class="navbar-item" href="{{@BASE}}/about/">About</a>
+                     <a class="navbar-item" href="{{@BASE}}/restaurants/">Restaurants</a>
+                     <a class="navbar-item" href="{{@BASE}}/cart/"><img src="{{ @BASE }}/ui/images/shopping-cart.png" alt="Cart" /></a>
+                  </div>
+               </div>
+            </nav>
+         </header>
+      </div>
+      <include href="{{ @content }}" />
+      <footer class="footer">
+         <div class="container">
+            Copyright &copy; 2021 Whats4Lunch. All Rights Reserved.
+         </div>
+      </footer>
+      <script>
+         function getAddrSG(query){
+            var locations=[];
+          $.ajax({
+          url: 'https://developers.onemap.sg/commonapi/search?searchVal='+query+'&returnGeom=Y&getAddrDetails=Y&pageNum=1',
+          success: function(result){
+                //Set result to a variable for writing
+                var results = JSON.stringify(result.results);
+                console.log(results);
+                $.each(result.results, function(index, value) {
+                   console.log("index is "+index+", valus is "+JSON.stringify(value.ADDRESS));
+                   locations.push(value.ADDRESS);
+                   $( "#location" ).autocomplete({
+                        source: locations
+                     });
+                });
+
+                }});
+         }
+ 
+         $('#location').keyup(function() {
+          console.log("onchange working");
+          var query = $('#location').val();
+          console.log("seach for "+query);
+          getAddrSG(query);
+         });
+
+         $(document).ready(function() {
+
+         // Check for click events on the navbar burger icon
+         $(".navbar-burger").click(function() {
+
+               // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+               $(".navbar-burger").toggleClass("is-active");
+               $(".navbar-menu").toggleClass("is-active");
+
+            });
+         });
+         
+     </script>
+  </body>
+</html>

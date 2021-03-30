@@ -1,0 +1,138 @@
+<form id="formCheckout" name="formCheckout" method="post" action="{{ @BASE }}/transactions/add">
+<div class="content">
+    <div class="main-content container">
+        <div class="columns">
+            <div class="cart column is-two-thirds">
+                <h3>My Cart</h3>
+
+                <div class="columns menu-items">
+                    <div class="column">
+                        Item
+                    </div>
+                    <div class="column">
+                        Quantity
+                    </div>
+                    <div class="column">
+                        Price
+                    </div>
+                    <div class="delete_item column">
+                    </div>
+                </div>
+                <repeat group="{{ @cart.cart_items }}" value="{{ @cart_item }}" counter="{{ @ctr }}">
+                    <div class="columns menu-items">
+                        <div class="column">
+                            {{ @cart_item->dish_name }}
+                        </div>
+                        <div class="column">
+                            {{ @cart_item->quantity }}
+                        </div>
+                        <div class="column">
+                            {{ @cart_item->price * @cart_item->quantity }}
+                        </div>
+                        <div class="is-2 column">
+                            <a href="{{ @BASE }}/cart/delete/{{ @cart_item->id }}"><img src="{{ @BASE }}/ui/images/delete.png" alt="Remove from Cart" /></a>
+                        </div>
+                    </div>
+                </repeat>
+                <div class="columns cart-price">
+                    <div class="column">
+                        <check if="{{ @cart_item->restaurant_id }}">
+                            <true>
+                                <div class="button"><a href="{{ @BASE }}/restaurants/show/{{ @cart_item->restaurant_id }}">&lt; Continue Shopping</a></div>
+                            </true>
+                            <false>
+                                <div class="button"><a href="{{ @BASE }}/restaurants/">&lt; Continue Shopping</a></div>
+                            </false>
+                        </check>
+                    </div>
+                    <div class="column">
+                        Total:
+                    </div>
+                    <div class="column">
+                        {{ @cart.total_cart_value }}
+                        <input name="total_price" type="hidden" value="{{ @cart.total_cart_value }}" />
+                    </div>
+                    <div class="is-2 column">
+                    </div>
+                </div>
+            </div>
+            <div class="payment column is-one-third">
+                <h3>Payment</h3>
+                <p>Payment Method: Cash</p>
+                <input name="payment_method" type="hidden" value="cash" />
+                <!-- TODO
+                <p>Credit Card  Cash</p>
+                <p>Card Number:</p>
+                <p>Card num field</p>
+                <p>Name On Card:</p>
+                <p>Name field</p>
+                <div class="card-date columns">
+                    <div class="column">
+                        <p>Exp Date:</p>
+                    </div>
+                    <div class="column">
+                        <p>CVV:</p>
+                    </div>
+                    <div class="column">
+                        <p>Exp Date field</p>
+                    </div>
+                    <div class="column">
+                        <p>CVV field</p>
+                    </div>
+                </div>
+                -->
+                <button class="button is-primary">Checkout</button>
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="delivery-address column is-two-thirds">
+                <h3>Delivery Address and Contact Details</h3>
+                <div class="columns">
+                    <div class="column">
+                        Address 1
+                    </div>
+                    <div class="column">
+                        <input name="address1" class="input" type="text" />
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        Address 2
+                    </div>
+                    <div class="column">
+                        <input name="address2" class="input" type="text" />
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        Postal Code
+                    </div>
+                    <div class="column">
+                        <input name="postal_code" class="input" type="text" />
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        Name
+                    </div>
+                    <div class="column">
+                        <input name="name" class="input" type="text" />
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        Phone Number
+                    </div>
+                    <div class="column">
+                        <input name="phone_num" class="input" type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="column"><input name="cart_id" type="hidden" value="{{ @cart.cart->id }}" /></div>
+        </div>
+
+    </div>
+    
+</div>
+</form>
