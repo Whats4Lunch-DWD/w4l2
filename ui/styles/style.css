@@ -1,3 +1,7 @@
+.navbar-item img {
+    max-height: 54px !important;
+}
+
 .navbar-burger {
     margin-top: -52px;
 }
