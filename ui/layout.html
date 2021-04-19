@@ -13,27 +13,54 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </head>
    <body>
-      <div class="header">
-         <header class="container">
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-               <div class="navbar-brand">
-                  <a class="navbar-item" href="{{@BASE}}"><img src="{{@BASE}}/ui/images/logo.png" /></a>
-               </div>
-               <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mynav">
-                  <span aria-hidden="true"></span>
-                  <span aria-hidden="true"></span>
-                  <span aria-hidden="true"></span>
-                </a>
-               <div id="mynav" class="navbar-menu">
-                  <div class="navbar-end">
-                     <a class="navbar-item" href="{{@BASE}}/about/">About</a>
-                     <a class="navbar-item" href="{{@BASE}}/restaurants/">Restaurants</a>
-                     <a class="navbar-item" href="{{@BASE}}/cart/"><img src="{{ @BASE }}/ui/images/shopping-cart.png" alt="Cart" /></a>
-                  </div>
-               </div>
-            </nav>
-         </header>
-      </div>
+      <check if="{{ @page=='Home' }}">
+         <true>
+            <div class="header hero is-fullheight">
+               <header class="container">
+                  <nav class="navbar" role="navigation" aria-label="main navigation">
+                     <div class="navbar-brand">
+                        <a class="navbar-item" href="{{@BASE}}"><img src="{{@BASE}}/ui/images/logo.png" /></a>
+                     </div>
+                     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mynav">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                      </a>
+                     <div id="mynav" class="navbar-menu">
+                        <div class="navbar-end">
+                           <a class="navbar-item" href="{{@BASE}}/about/">About</a>
+                           <a class="navbar-item" href="{{@BASE}}/restaurants/">Restaurants</a>
+                           <a class="navbar-item" href="{{@BASE}}/cart/"><img src="{{ @BASE }}/ui/images/shopping-cart.png" alt="Cart" /></a>
+                        </div>
+                     </div>
+                  </nav>
+               </header>
+            </div>
+         </true>
+         <false>
+            <div class="header">
+               <header class="container">
+                  <nav class="navbar" role="navigation" aria-label="main navigation">
+                     <div class="navbar-brand">
+                        <a class="navbar-item" href="{{@BASE}}"><img src="{{@BASE}}/ui/images/logo.png" /></a>
+                     </div>
+                     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mynav">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                      </a>
+                     <div id="mynav" class="navbar-menu">
+                        <div class="navbar-end">
+                           <a class="navbar-item" href="{{@BASE}}/about/">About</a>
+                           <a class="navbar-item" href="{{@BASE}}/restaurants/">Restaurants</a>
+                           <a class="navbar-item" href="{{@BASE}}/cart/"><img src="{{ @BASE }}/ui/images/shopping-cart.png" alt="Cart" /></a>
+                        </div>
+                     </div>
+                  </nav>
+               </header>
+            </div>
+         </false>
+      </check>
       <include href="{{ @content }}" />
       <footer class="footer">
          <div class="container">
