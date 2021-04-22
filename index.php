@@ -41,9 +41,11 @@ $f3->route('GET /',
 );
 
 // search resto
-$f3->route('POST /',
+//$f3->route('POST /',
+$f3->route('GET /search',
   function ($f3) {
-    $query = $f3->get('POST');
+    //$query = $f3->get('POST');
+    $query = $f3->get('GET');
     $f3->set('query',$query);
 
     //print_r($query);
