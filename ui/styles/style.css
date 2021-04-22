@@ -23,13 +23,13 @@
 
 h2.title {
     text-align: center;
-    font-family: Open Sans;
+    font-family: 'Great Vibes', 'Open Sans', cursive;
     font-style: normal;
     font-weight: 600;
     font-size: 36px;
     line-height: 49px;
     /* identical to box height */
-    color: ##221F20;       
+    color: #221F20;       
 }
 
 span.sub-title {
