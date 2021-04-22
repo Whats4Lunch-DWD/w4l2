@@ -16,6 +16,10 @@
     text-align: center;
 }
 
+.hero.is-fullheight .hero-body {
+    flex-direction: column;
+}
+
 h2.title {
     text-align: center;
     font-family: Open Sans;
