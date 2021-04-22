@@ -64,6 +64,7 @@ p.title {
 
 .searchbtn button {
     width: 200px;
+    margin: 10px;
 }
 
 .searchbtn button.is-primary {
