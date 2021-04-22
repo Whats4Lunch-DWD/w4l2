@@ -54,12 +54,20 @@ p.title {
     color: #363636 !important;
 }
 
+.field.is-grouped {
+    flex-direction: column;
+}
+
 .searchbtn {
     margin: auto auto;
 }
 
 .searchbtn button {
-    width: 150px;
+    width: 200px;
+}
+
+.searchbtn button.is-primary {
+    background-color: #5AC475;
 }
 
 .content {
