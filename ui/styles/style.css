@@ -42,6 +42,10 @@ span.sub-title {
     display: block;
 }
 
+#formGetRestos {
+    width: 80%;
+}
+
 p.title {
     color: #fff;
 }
