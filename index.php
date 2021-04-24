@@ -33,9 +33,15 @@ if (!isset($_SESSION["CART_SESSION"])) {
 //home page (index.html) -- actually just shows form entry page with a different title
 $f3->route('GET /',
   function ($f3) {
+
+    $controller = new RestaurantController;
+    $data = $controller->showcaseRestaurants();
+    $f3->set("records", $data);
+    
     $f3->set('html_title','Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
     $f3->set('content','home.html');
     $f3->set('page','Home');
+    
     echo Template::instance()->render('layout.html');
   }
 );

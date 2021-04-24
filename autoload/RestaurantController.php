@@ -20,6 +20,14 @@ class RestaurantController {
 		$this->mapper->save();									// save new record with these fields
 	}
 
+	public function showcaseRestaurants() {
+		$restaurants = $this->mapper->find(array("limit"=>3));	
+		$total_restaurants = count($restaurants);
+		$r = array("results"=>$restaurants,"total_results"=>$total_restaurants);
+		
+		return $r;
+	}
+
 	public function listRestaurants() {
 		$restaurants = $this->mapper->find();	
 		$total_restaurants = count($restaurants);
