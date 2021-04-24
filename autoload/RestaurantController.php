@@ -21,7 +21,7 @@ class RestaurantController {
 	}
 
 	public function showcaseRestaurants() {
-		$restaurants = $this->mapper->find(['limit=?',3]);	
+		$restaurants = $this->mapper->find(array(),array('limit'=>3));	
 		$total_restaurants = count($restaurants);
 		$r = array("results"=>$restaurants,"total_results"=>$total_restaurants);
 		
