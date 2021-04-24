@@ -46,6 +46,15 @@ $f3->route('GET /',
   }
 );
 
+$f3->route('GET /signin',
+  function ($f3) {
+
+    $f3->set('html_title','Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
+    $f3->set('content','sign-in.html');
+    echo Template::instance()->render('layout.html');
+  }
+);
+
 // search resto
 //$f3->route('POST /',
 $f3->route('GET /search',
