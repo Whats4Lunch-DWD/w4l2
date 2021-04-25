@@ -59,6 +59,8 @@ $f3->route('POST /login',
   function ($f3) {
     $controller = new UsersController;
     $data = $controller->UsersController();
+
+    $auth = $controller->login($_POST["username"],$_POST["password"]);
   }
 );
 
