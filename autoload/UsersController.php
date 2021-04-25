@@ -14,6 +14,7 @@ class UsersController {
 
         $user = $this->mapper->load(array("username = ?",$username)); // get the user data. we want to get the hashed_password.
 
+        echo "1";
         print_r($user);
 
         /*
