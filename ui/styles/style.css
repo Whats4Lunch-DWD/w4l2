@@ -46,6 +46,10 @@ span.sub-title {
     width: 80%;
 }
 
+.hello {
+    padding-top: 30px;
+}
+
 p.title {
     font-family: 'Great Vibes', 'Open Sans', cursive;
     color: #fff !important;
