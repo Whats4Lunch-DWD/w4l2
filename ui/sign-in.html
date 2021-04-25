@@ -1,7 +1,7 @@
 <div class="content">
     <div class="main-content container">
         <h1>Sign In</h1>
-        <check if err="wrongpassword">
+        <check if="{{ @err=='wrongpassword' }}">
             <true>
                 <span class="notification is-danger">The password is incorrect</span>
             </true>
