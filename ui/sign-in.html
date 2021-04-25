@@ -3,7 +3,7 @@
         <h1>Sign In</h1>
         <check if="{{ @err=='wrongpassword' }}">
             <true>
-                <span class="notification is-danger">The password is incorrect</span>
+                <div class="notification is-warning">The password is incorrect</div>
             </true>
         </check>
         <form id="frmSignIn" name="frmSignIn" method="POST" action="{{@BASE}}/login">
