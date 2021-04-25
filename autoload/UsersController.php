@@ -16,13 +16,12 @@ class UsersController {
 
         print_r($user["password"]);
 
-        /*
-        if (password_verify("password",$hashed_password)) {
+        if (password_verify($password,$user["password"])) {
             echo " valid";
         } else {
             echo " invalid";
         }
-        */
+        
     }
 
 }
