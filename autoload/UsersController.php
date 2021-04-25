@@ -2,9 +2,11 @@
 
 class UsersController {
 	private $mapper;
+    var $f;
 
 	public function __construct() {
 		global $f3;
+        $this->f = $f3;
 		$this->mapper = new DB\SQL\Mapper($f3->get('DB'),"users");	// create DB query mapper object		
     }
 
@@ -17,7 +19,7 @@ class UsersController {
         if (password_verify($password,$user["password"])) {
             echo " valid";
         } else {
-            $f3->reroute("/signin?err=wrongpassword");
+            $this->f->reroute("/signin?err=wrongpassword");
         }
         
     }
