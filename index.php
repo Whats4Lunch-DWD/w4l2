@@ -45,8 +45,6 @@ $f3->route('GET /',
     if (isset($_SESSION["username"]) and !is_null($_SESSION["username"])) {
       $f3->set('username',$_SESSION["username"]); 
     }
-
-    echo "username: ".$_SESSION["username"];
     
     echo Template::instance()->render('layout.html');
   }
