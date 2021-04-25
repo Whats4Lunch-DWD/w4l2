@@ -33,7 +33,14 @@
                            <a class="navbar-item" href="{{@BASE}}/">Home</a>
                            <a class="navbar-item" href="{{@BASE}}/about/">About</a>
                            <a class="navbar-item" href="{{@BASE}}/restaurants/">Restaurants</a>
-                           <a class="navbar-item" href="{{@BASE}}/signin/">Sign In</a>
+                           <check if="{{ @username }}">
+                              <true>
+                                 <a class="navbar-item" href="{{@BASE}}/signout/">Sign Out</a>
+                              </true>
+                              <false>
+                                 <a class="navbar-item" href="{{@BASE}}/signin/">Sign In</a>
+                              </false>
+                           </check>
                            <a class="navbar-item" href="{{@BASE}}/cart/"><img src="{{ @BASE }}/ui/images/shopping-cart.png" alt="Cart" /></a>
                         </div>
                      </div>

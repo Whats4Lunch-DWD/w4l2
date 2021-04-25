@@ -41,6 +41,10 @@ $f3->route('GET /',
     $f3->set('html_title','Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
     $f3->set('content','home.html');
     $f3->set('page','Home');
+
+    if (isset($_SESSION["username"]) and !is_null($_SESSION["username"])) {
+      $f3->set('username',$_SESSION["username"]); echo "username: ".$_SESSION["username"];
+    }
     
     echo Template::instance()->render('layout.html');
   }
