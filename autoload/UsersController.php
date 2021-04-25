@@ -12,7 +12,7 @@ class UsersController {
         //$hashed_password = password_hash($password, PASSWORD_DEFAULT);
         //echo $hashed_password;
 
-        $user = $this->mapper->find("username = ?",$username); // get the user data. we want to get the hashed_password.
+        $user = $this->mapper->load("username = ?",$username); // get the user data. we want to get the hashed_password.
 
         print_r($user);
 
