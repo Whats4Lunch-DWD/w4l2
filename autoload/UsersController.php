@@ -17,8 +17,8 @@ class UsersController {
         $user = $this->mapper->load(array("username = ?",$username)); // get the user data. we want to get the hashed_password.
 
         if (password_verify($password,$user["password"])) {
-            $this->f->reroute("/");
             $_SESSION["username"]=$user["username"];
+            $this->f->reroute("/");
         } else {
             $this->f->reroute("/signin?err=wrongpassword");
         }
