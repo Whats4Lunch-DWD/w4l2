@@ -9,7 +9,10 @@ class UsersController {
     }
 
     public function login($username, $password) {        
-        echo password_hash($password, PASSWORD_DEFAULT);
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        if (password_verify("password",$hashed_password)) {
+            echo "valid";
+        }
     }
 
 }
