@@ -9,12 +9,7 @@ class UsersController {
     }
 
     public function login($username, $password) {        
-        $crypt = \Bcrypt::instance();
-        $hashed_password = $crypt->hash($_POST["password"], \Base::instance()->get('salt'), 10);
-        echo($hashed_password);
-
-        //$crypt->verify($hashed_password, $hashed_password_in_db);
-
+        echo password_hash($password, PASSWORD_DEFAULT);
     }
 
 }
