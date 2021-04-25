@@ -13,11 +13,11 @@ class UsersController {
         //echo $hashed_password;
 
         $user = $this->mapper->load(array("username = ?",$username)); // get the user data. we want to get the hashed_password.
-        
+
         if (password_verify($password,$user["password"])) {
             echo " valid";
         } else {
-            echo " invalid";
+            $f3->reroute("/signin?err=wrongpassword");
         }
         
     }
