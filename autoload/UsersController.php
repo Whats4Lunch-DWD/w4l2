@@ -9,13 +9,12 @@ class UsersController {
     }
 
     public function login($username, $password) {        
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-        echo $hashed_password;
+        //$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        //echo $hashed_password;
 
         $user = $this->mapper->load(array("username = ?",$username)); // get the user data. we want to get the hashed_password.
 
-        echo "1";
-        print_r($user);
+        print_r($user["password"]);
 
         /*
         if (password_verify("password",$hashed_password)) {
