@@ -47,7 +47,10 @@ span.sub-title {
 }
 
 .hello {
-    padding-top: 30px;
+    padding-top: 28px;
+    padding-right: 30px;
+    padding-left: 30px;
+    font-size: 0.8em;
 }
 
 p.title {
