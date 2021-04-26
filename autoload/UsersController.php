@@ -72,7 +72,7 @@ class UsersController {
     }
 
     public function checkUsername($username) {
-        $user = $this->mapper->find(array("username = ?",$username));
+        $user = $this->mapper->load(array("username = ?",$username));
 
         if (sizeof($user)<1) {
             return 0;
