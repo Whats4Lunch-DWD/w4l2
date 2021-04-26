@@ -50,11 +50,11 @@ class UsersController {
         }
 
         if ($form["email"]=="") {
-            $err .= "Email cannot be null".htmlentities("<br />");
+            $err .= "Email cannot be null".html_entity_decode("<br />");
         }
 
         if ($form["phone"]=="") {
-            $err .= "Phone cannot be null".htmlentities("<br />");
+            $err .= "Phone cannot be null".html_entity_decode("<br />");
         }
 
         //echo "<pre>";
