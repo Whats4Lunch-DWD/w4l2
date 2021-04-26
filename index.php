@@ -34,6 +34,10 @@ if (isset($_SESSION["name"]) and !is_null($_SESSION["name"])) {
   $f3->set('name',$_SESSION["name"]); 
 }
 
+if (isset($_SESSION["phone"]) and !is_null($_SESSION["phone"])) {
+  $f3->set('phone',$_SESSION["phone"]); 
+}
+
   /////////////////////////////////////////////
  // Simple Example URL application routings //
 /////////////////////////////////////////////

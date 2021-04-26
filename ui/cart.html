@@ -132,7 +132,14 @@
                         Phone Number
                     </div>
                     <div class="column">
-                        <input name="phone_num" class="input" type="text" />
+                        <check if="{{ @phone }}">
+                            <true>
+                                <input name="phone_num" class="input" type="text" value="{{ @phone }}" />
+                            </true>
+                            <false>
+                                <input name="phone_num" class="input" type="text" />
+                            </false>
+                        </check>
                     </div>
                 </div>
             </div>
