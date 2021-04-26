@@ -26,6 +26,7 @@ class UsersController {
     }
 
     public function logout($username) {
+        // from https://www.php.net/manual/en/function.session-destroy
         // Unset all of the session variables.
         $_SESSION = array();
 
@@ -42,6 +43,11 @@ class UsersController {
         // Finally, destroy the session.
         session_destroy();
         $this->f->reroute("/");
+    }
+
+    public function showProfile($username) {
+        $user = $this->mapper->load(array("username = ?",$username)); // get the user data.
+        return $user;
     }
 
 }
