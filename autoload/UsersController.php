@@ -72,6 +72,7 @@ class UsersController {
     }
 
     public function checkUsername($username) {
+        $this->mapper = new DB\SQL\Mapper($f3->get('DB'),"users");	// create DB query mapper object		
         $user = $this->mapper->load(array("username = ?",$username));
 
         if (sizeof($user)<1) {
