@@ -58,7 +58,7 @@ span.sub-title {
 }
 
 .profile {
-    width: 800px !important;
+    max-width: 800px !important;
 }
 
 p.title {
