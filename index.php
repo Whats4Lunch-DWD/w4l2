@@ -76,7 +76,7 @@ $f3->route('GET /signup',
 
     $err = explode("<br />",$_GET["err"]);
 
-    $f3->set('err',$err);
+    $f3->set('err',$err); print_r($err);
     echo Template::instance()->render('layout.html');
   }
 );
