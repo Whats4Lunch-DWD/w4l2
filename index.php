@@ -78,6 +78,13 @@ $f3->route('GET /signup',
   }
 );
 
+$f3->route('POST /signup',
+  function ($f3) {
+    $controller = new UsersController;
+    $auth = $controller->signup($_POST);
+  }
+);
+
 $f3->route('POST /login',
   function ($f3) {
     $controller = new UsersController;
