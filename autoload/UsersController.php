@@ -26,7 +26,7 @@ class UsersController {
         //echo "</pre>";
         //die();
 
-        if (!isset($form["name"]) or is_null($form["name"])) {
+        if ($form["name"]=="") {
             $err .= "Name cannot be null<br />";
         }
 
