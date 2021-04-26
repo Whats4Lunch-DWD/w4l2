@@ -37,7 +37,7 @@ class UsersController {
             $err .= "Username size cannot be less than 6 characters<br />";
         }
 
-        if (checkUsername($form["username"])) {
+        if ($this->checkUsername($form["username"])) {
             $err .= "User already exists";
         }
 
