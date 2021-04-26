@@ -49,12 +49,13 @@ span.sub-title {
 .hello {
     padding-top: 18px;
     padding-right: 30px;
-    padding-left: 10px;
+    padding-left: 30px;
     font-size: 0.8em;
 }
 
 .hero-head .hello {
     padding-top: 27px;
+    padding-left: 10px;
 }
 
 .profile {
