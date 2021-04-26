@@ -20,15 +20,21 @@ class UsersController {
         $this->mapper["role"]="normal";
         $this->mapper["active"]="1";
 
-        echo "<pre>";
-        print_r($form);
+        //echo "<pre>";
+        //print_r($form);
         //print_r($this->mapper);
-        echo "</pre>";
-        die();
+        //echo "</pre>";
+        //die();
 
-        if (!isset($this->mapper["name"]) or is_null($this->mapper["name"])) {
+        if (!isset($form["name"]) or is_null($form["name"])) {
             $err .= "Name cannot be null<br />";
         }
+
+        echo "<pre>";
+        print_r($form);
+        echo $err;
+        echo "</pre>";
+        die();
 
         if (!isset($this->mapper["username"]) or is_null($this->mapper["username"])) {
             $err .= "Username cannot be null<br />";
