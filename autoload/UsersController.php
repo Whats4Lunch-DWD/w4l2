@@ -7,7 +7,8 @@ class UsersController {
 	public function __construct() {
 		global $f3;
         $this->f = $f3;
-		$this->mapper = new DB\SQL\Mapper($f3->get('DB'),"users");	// create DB query mapper object		
+		$this->mapper = new DB\SQL\Mapper($f3->get('DB'),"users");	// create DB query mapper object	
+        $this->checker = new DB\SQL\Mapper($f3->get('DB'),"users");	// create DB query mapper object	
     }
 
     public function signup($form) {
@@ -19,11 +20,11 @@ class UsersController {
         $this->mapper["role"]="normal";
         $this->mapper["active"]="1";
 
-        echo "<pre>";
+        //echo "<pre>";
         //print_r($form);
-        print_r($this->mapper);
-        echo "</pre>";
-        die();
+        //print_r($this->mapper);
+        //echo "</pre>";
+        //die();
 
         if ($form["name"]=="") {
             $err .= "Name cannot be null<br />";
@@ -74,8 +75,8 @@ class UsersController {
     }
 
     public function checkUsername($username) {
-        $this->mapper = new DB\SQL\Mapper($this->f->get('DB'),"users");	// create DB query mapper object		
-        $user = $this->mapper->load(array("username = ?",$username));
+        $this->checker = new DB\SQL\Mapper($this->f->get('DB'),"users");	// create DB query mapper object		
+        $user = $this->checker->load(array("username = ?",$username));
 
         if ($user == "") {
             return 0;
