@@ -45,7 +45,7 @@ $f3->route('GET /',
     if (isset($_SESSION["username"]) and !is_null($_SESSION["username"])) {
       $f3->set('username',$_SESSION["username"]); 
     }
-    
+
     echo Template::instance()->render('layout.html');
   }
 );
@@ -64,6 +64,13 @@ $f3->route('POST /login',
   function ($f3) {
     $controller = new UsersController;
     $auth = $controller->login($_POST["username"],$_POST["password"]);
+  }
+);
+
+$f3->route('POST /signout',
+  function ($f3) {
+    $controller = new UsersController;
+    $auth = $controller->logout($_POST["username"]);
   }
 );
 
