@@ -33,6 +33,10 @@ class UsersController {
             $err .= "Username cannot be null<br />";
         }
 
+        if (strlen($form["username"])<6) {
+            $err .= "Username size cannot be less than 6 characters<br />";
+        }
+
         if (checkUsername($form["username"])) {
             $err .= "User already exists";
         }
