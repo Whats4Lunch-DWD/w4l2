@@ -12,7 +12,6 @@ class UsersController {
 
     public function signup($form) {
         $this->mapper->dry();
-        $err = 0;
         
         foreach($form as $form_key => $form_value) {
             $this->mapper[$form_key]=$form_value;
@@ -30,29 +29,29 @@ class UsersController {
             $err .= "Name cannot be null<br />";
         }
 
-        echo "<pre>";
-        print_r($form);
-        echo $err;
-        echo "</pre>";
-        die();
-
-        if (!isset($this->mapper["username"]) or is_null($this->mapper["username"])) {
+        if ($form["username"]=="") {
             $err .= "Username cannot be null<br />";
         }
 
-        if (!isset($this->mapper["password"]) or is_null($this->mapper["password"])) {
+        if ($form["password"]=="") {
             $err .= "Password cannot be null<br />";
         }
 
-        if (!isset($this->mapper["email"]) or is_null($this->mapper["email"])) {
+        if ($form["email"]=="") {
             $err .= "Email cannot be null<br />";
         }
 
-        if (!isset($this->mapper["phone"]) or is_null($this->mapper["phone"])) {
+        if ($form["phone"]=="") {
             $err .= "Phone cannot be null<br />";
         }
 
-        if ($err==0) {
+        echo "<pre>";
+        print_r($form);
+        print_r($err);
+        echo "</pre>";
+        die();
+
+        if (!isset($err)) {
             $this->mapper->save();
             $this->f->reroute("/signin");
         } else {
