@@ -67,10 +67,10 @@ $f3->route('POST /login',
   }
 );
 
-$f3->route('POST /signout',
+$f3->route('GET /signout',
   function ($f3) {
     $controller = new UsersController;
-    $auth = $controller->logout($_POST["username"]);
+    $auth = $controller->logout($_SESSION["username"]);
   }
 );
 
