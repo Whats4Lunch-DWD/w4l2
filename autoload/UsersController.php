@@ -33,8 +33,16 @@ class UsersController {
             $err .= "Username cannot be null<br />";
         }
 
+        if (checkUsername($form["username"])) {
+            $err .= "User already exists";
+        }
+
         if ($form["password"]=="") {
             $err .= "Password cannot be null<br />";
+        }
+
+        if (strlen($form["password"])<6) {
+            $err .= "Password size cannot be less than 6 characters<br />";
         }
 
         if ($form["email"]=="") {
@@ -56,6 +64,16 @@ class UsersController {
             $this->f->reroute("/signin");
         } else {
             $this->f->reroute("/signup?err=".$err);
+        }
+    }
+
+    public function checkUsername($username) {
+        $user = $this->mapper->load(array("username = ?",$username));
+
+        if (sizeof($user)<1) {
+            return 0;
+        } else {
+            return 1;
         }
     }
 
