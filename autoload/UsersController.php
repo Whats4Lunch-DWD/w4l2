@@ -67,7 +67,7 @@ class UsersController {
             $this->mapper->save();
             $this->f->reroute("/signin");
         } else {
-            $this->f->reroute("/signup?err=".$err."&".$form);
+            $this->f->reroute("/signup?err=".$err."&".explode($form));
         }
     }
 
