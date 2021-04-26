@@ -58,12 +58,12 @@ class UsersController {
             $err .= "Phone cannot be null".html_entity_decode("&lt;br /&gt;");
         }
 
-        echo "<pre>";
+        //echo "<pre>";
         //print_r($form);
         //print_r($err);
-        print_r($this->mapper);
-        echo "</pre>";
-        die();
+        //print_r($this->mapper);
+        //echo "</pre>";
+        //die();
 
         if (!isset($err)) {
             $this->mapper->save();
