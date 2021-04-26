@@ -53,6 +53,10 @@ span.sub-title {
     font-size: 0.8em;
 }
 
+.hero-head .hello {
+    padding-top: 27px;
+}
+
 p.title {
     font-family: 'Great Vibes', 'Open Sans', cursive;
     color: #fff !important;
