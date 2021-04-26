@@ -3,7 +3,11 @@
         <h1>Sign Up</h1>
         <check if="{{ @err }}">
             <true>
-                <div class="notification is-warning">{{ @err }}</div>
+                <div class="notification is-warning">
+                    {~ foreach (@err as @id=>@e): ~}
+                        {{ @e }}<br />
+                    {~ endroreach ~}
+                </div>
             </true>
         </check>
         <form id="frmSignUp" name="frmSignUp" method="POST" action="{{@BASE}}/signup">
