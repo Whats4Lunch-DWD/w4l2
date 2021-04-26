@@ -21,7 +21,8 @@ class UsersController {
         $this->mapper["active"]="1";
 
         echo "<pre>";
-        print_r($this->mapper);
+        print_r($form);
+        //print_r($this->mapper);
         echo "</pre>";
         die();
 
