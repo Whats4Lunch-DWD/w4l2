@@ -61,8 +61,18 @@ $f3->route('GET /',
 $f3->route('GET /signin',
   function ($f3) {
 
-    $f3->set('html_title','Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
+    $f3->set('html_title','Sign In - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
     $f3->set('content','sign-in.html');
+    $f3->set('err',$_GET["err"]);
+    echo Template::instance()->render('layout.html');
+  }
+);
+
+$f3->route('GET /signup',
+  function ($f3) {
+
+    $f3->set('html_title','Sign Up - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
+    $f3->set('content','sign-up.html');
     $f3->set('err',$_GET["err"]);
     echo Template::instance()->render('layout.html');
   }

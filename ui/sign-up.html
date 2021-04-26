@@ -1,0 +1,38 @@
+<div class="content">
+    <div class="main-content container">
+        <h1>Sign In</h1>
+        <check if="{{ @err }}">
+            <true>
+                <div class="notification is-warning">{{ @err }}</div>
+            </true>
+        </check>
+        <form id="frmSignUp" name="frmSignUp" method="POST" action="{{@BASE}}/signup">
+            <div class="columns">
+                <div class="column">
+                    <input type="text" name="username" id="username" placeholder="Username" class="input" />
+                </div>
+                <div class="column">
+                    <input type="password" name="password" id="password" placeholder="Password" class="input" />
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <input type="text" name="name" id="name" placeholder="Name" class="input" />
+                </div>
+                <div class="column">
+                    <input type="text" name="email" id="email" placeholder="Email" class="input" />
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <input type="text" name="phone" id="phone" placeholder="Phone" class="input" />
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <button class="button is-primary" name="signup">Sign Up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
