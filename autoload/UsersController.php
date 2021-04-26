@@ -19,11 +19,11 @@ class UsersController {
         $this->mapper["role"]="normal";
         $this->mapper["active"]="1";
 
-        //echo "<pre>";
+        echo "<pre>";
         //print_r($form);
-        //print_r($this->mapper);
-        //echo "</pre>";
-        //die();
+        print_r($this->mapper);
+        echo "</pre>";
+        die();
 
         if ($form["name"]=="") {
             $err .= "Name cannot be null<br />";
