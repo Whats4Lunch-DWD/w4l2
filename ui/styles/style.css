@@ -57,6 +57,10 @@ span.sub-title {
     padding-top: 27px;
 }
 
+.profile {
+    width: 800px !important;
+}
+
 p.title {
     font-family: 'Great Vibes', 'Open Sans', cursive;
     color: #fff !important;
