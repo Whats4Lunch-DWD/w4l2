@@ -50,11 +50,11 @@ class UsersController {
         }
 
         if ($form["email"]=="") {
-            $err .= "Email cannot be null&lt;br /&gt;";
+            $err .= "Email cannot be null\n";
         }
 
         if ($form["phone"]=="") {
-            $err .= "Phone cannot be null&lt;br /&gt;";
+            $err .= "Phone cannot be null\n";
         }
 
         //echo "<pre>";
