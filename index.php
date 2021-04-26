@@ -76,6 +76,8 @@ $f3->route('GET /signup',
 
     $err = explode("<br />",$_GET["err"]);
 
+    print_r(sizeof($err));
+
     if (sizeof($err)>0) {
       $f3->set('err',$err);
     }
