@@ -75,9 +75,7 @@ class UsersController {
         $this->mapper = new DB\SQL\Mapper($this->f->get('DB'),"users");	// create DB query mapper object		
         $user = $this->mapper->load(array("username = ?",$username));
 
-        print_r($user); die();
-
-        if (sizeof($user)<1) {
+        if ($user == "") {
             return 0;
         } else {
             return 1;
