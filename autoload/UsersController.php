@@ -38,7 +38,7 @@ class UsersController {
         }
 
         if ($this->checkUsername($form["username"])) {
-            $err .= "User already exists";
+            $err .= "User already exists<br />";
         }
 
         if ($form["password"]=="") {
