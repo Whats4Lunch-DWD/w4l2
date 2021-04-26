@@ -21,7 +21,7 @@
                <div class="hero-head">
                   <nav class="container navbar" role="navigation" aria-label="main navigation">
                      <div class="navbar-brand">
-                        <a class="navbar-item" href="{{@BASE}}"><img class="logo" src="{{@BASE}}/ui/images/logo.png" /></a> <check if="{{ @username }}"><true><span class="hello">Hello {{ @username}}</span></true></check>
+                        <a class="navbar-item" href="{{@BASE}}"><img class="logo" src="{{@BASE}}/ui/images/logo.png" /></a>
                      </div>
                      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mynav">
                         <span aria-hidden="true"></span>
@@ -29,6 +29,7 @@
                         <span aria-hidden="true"></span>
                       </a>
                      <div id="mynav" class="navbar-menu">
+                        <check if="{{ @username }}"><true><span class="hello">Hello {{ @username}}</span></true></check>
                         <div class="navbar-end">
                            <a class="navbar-item" href="{{@BASE}}/">Home</a>
                            <a class="navbar-item" href="{{@BASE}}/about/">About</a>
