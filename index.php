@@ -76,7 +76,10 @@ $f3->route('GET /signup',
 
     $err = explode("<br />",$_GET["err"]);
 
-    $f3->set('err',$err);
+    if (sizeof($err)>0) {
+      $f3->set('err',$err);
+    }
+    
     echo Template::instance()->render('layout.html');
   }
 );
