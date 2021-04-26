@@ -4,11 +4,23 @@
         <div class="columns">
             <div class="column is-left">
                 <h3>Personal</h3>
-                {{ @user.name }}
-                {{ @user.username }}
-                {{ @user.email }}
-                {{ @user.phone }}
-
+                    <div class="columns">
+                        <div class="column label">Name</div>
+                        <div class="column field">{{ @user.name }}</div>
+                    </div>
+                    <div class="columns">
+                        <div class="column label">Username</div>
+                        <div class="column field">{{ @user.username }}</div>
+                    </div>
+                    <div class="columns">
+                        <div class="column label">Email</div>
+                        <div class="column field">{{ @user.email }}</div>
+                    </div>
+                    <div class="columns">
+                        <div class="column label">Phone</div>
+                        <div class="column field">{{ @user.phone }}</div>
+                    </div>
+                    
                 <h3>Address</h3>
                 
 
