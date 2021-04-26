@@ -4,9 +4,13 @@
         <check if="{{ @err }}">
             <true>
                 <div class="notification is-warning">
-                    {~ foreach (@err as @id=>@e): ~}
-                        {{ @e }} <br />
-                    {~ endforeach ~}
+                    <check if="{{ @err }}">
+                        <true>
+                            {~ foreach (@err as @id=>@e): ~}
+                                {{ @e }} <br />
+                            {~ endforeach ~}
+                        </true>
+                    </check>
                 </div>
             </true>
         </check>
