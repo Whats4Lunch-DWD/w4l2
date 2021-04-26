@@ -18,6 +18,7 @@ class UsersController {
 
         if (password_verify($password,$user["password"])) {
             $_SESSION["username"]=$user["username"];
+            $_SESSION["name"]=$user["name"];
             $this->f->reroute("/");
         } else {
             $this->f->reroute("/signin?err=wrongpassword");
