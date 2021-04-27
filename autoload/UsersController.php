@@ -21,6 +21,9 @@ class UsersController {
                 $this->mapper[$form_key]=$form_value;
             }
         }
+        $this->mapper["address1"]=null;
+        $this->mapper["address2"]=null;
+        $this->mapper["postalcode"]=null;
         $this->mapper["role"]="normal";
         $this->mapper["active"]="1";
 
