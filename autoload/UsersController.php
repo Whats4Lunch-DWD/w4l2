@@ -21,11 +21,11 @@ class UsersController {
                 $this->mapper[$form_key]=$form_value;
             }
         }
-        //$this->mapper["address1"]=null;
-        //$this->mapper["address2"]=null;
-        //$this->mapper["postalcode"]=null;
-        //$this->mapper["role"]="normal";
-        //$this->mapper["active"]="1";
+        $this->mapper["address1"]=null;
+        $this->mapper["address2"]=null;
+        $this->mapper["postalcode"]=null;
+        $this->mapper["role"]="normal";
+        $this->mapper["active"]="1";
 
         //echo "<pre>";
         //print_r($form);
@@ -73,6 +73,7 @@ class UsersController {
         //die();
 
         if (!isset($err)) {
+            $this->f->get("DB")->log();
             $result = $this->mapper->save();
             print_r($result);
             die();
