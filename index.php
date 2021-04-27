@@ -81,6 +81,7 @@ $f3->route('GET /signup',
     }
 
     if($_GET["signup"]=="success") {
+      echo 1;
       $f3->set('signup',$_GET["signup"]);
     }
     
