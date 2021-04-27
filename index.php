@@ -75,9 +75,13 @@ $f3->route('GET /signup',
     $f3->set('content','sign-up.html');
 
     $err = explode("<br />",$_GET["err"]);
-    
+
     if ($err[0]!="") {
       $f3->set('err',$err);
+    }
+
+    if($_GET["signup"]=="success") {
+      $f3->set('signup',$_GET["signup"]);
     }
     
     echo Template::instance()->render('layout.html');

@@ -80,7 +80,7 @@ class UsersController {
             //echo $this->f->get("DB")->log();
             $this->mapper->save();
             //die();
-            $this->f->reroute("/signin");
+            $this->f->reroute("/signin?signup=success");
         } else {
             //$this->f->reroute("/signup?err=".$err."&".implode("&",$form));
             $this->f->reroute("/signup?err=".$err);
