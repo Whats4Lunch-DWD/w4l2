@@ -16,7 +16,7 @@ class UsersController {
         
         foreach($form as $form_key => $form_value) {
             if ($form_key=="password") {
-                $this->mapper["password"]=password_hash($form_value);
+                $this->mapper["password"]=password_hash($form_value, PASSWORD_DEFAULT);
             }
             $this->mapper[$form_key]=$form_value;
         }
