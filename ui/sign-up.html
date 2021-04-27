@@ -4,13 +4,18 @@
         <check if="{{ @err }}">
             <true>
                 <div class="notification is-warning">
-                    <check if="{{ @err }}">
-                        <true>
-                            {~ foreach (@err as @id=>@e): ~}
-                                {{ @e }} <br />
-                            {~ endforeach ~}
-                        </true>
-                    </check>
+                    
+                    {~ foreach (@err as @id=>@e): ~}
+                        {{ @e }} <br />
+                    {~ endforeach ~}
+                        
+                </div>
+            </true>
+        </check>
+        <check if="{{ @signup }}">
+            <true>
+                <div class="notification is-warning">
+                    Sign up is successful! Please login.
                 </div>
             </true>
         </check>
