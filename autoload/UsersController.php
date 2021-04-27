@@ -73,8 +73,10 @@ class UsersController {
         //die();
 
         if (!isset($err)) {
-            $this->mapper->save();
-            $this->f->reroute("/signin");
+            $result = $this->mapper->save();
+            print_r($result);
+            die();
+            //$this->f->reroute("/signin");
         } else {
             //$this->f->reroute("/signup?err=".$err."&".implode("&",$form));
             $this->f->reroute("/signup?err=".$err);
