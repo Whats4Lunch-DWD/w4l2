@@ -73,7 +73,7 @@ class UsersController {
         //die();
 
         if (!isset($err)) {
-            $this->f->get("DB")->log();
+            echo $this->f->get("DB")->log();
             $result = $this->mapper->save();
             print_r($result);
             die();
