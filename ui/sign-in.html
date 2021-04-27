@@ -6,6 +6,13 @@
                 <div class="notification is-warning">The password is incorrect</div>
             </true>
         </check>
+        <check if="{{ @signup }}">
+            <true>
+                <div class="notification is-warning">
+                    Sign up is successful! Please login.
+                </div>
+            </true>
+        </check>
         <form id="frmSignIn" name="frmSignIn" method="POST" action="{{@BASE}}/login">
             <div class="columns">
                 <div class="column">
