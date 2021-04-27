@@ -17,6 +17,8 @@ class UsersController {
         foreach($form as $form_key => $form_value) {
             if ($form_key=="password") {
                 $this->mapper["password"]=password_hash($form_value, PASSWORD_DEFAULT);
+            } else if ($form_key=="signup") {
+                // do nothing.
             } else {
                 $this->mapper[$form_key]=$form_value;
             }
@@ -72,12 +74,13 @@ class UsersController {
         //echo "</pre>";
         //die();
 
+        // the form contains singup field. remove it.
+
         if (!isset($err)) {
-            echo $this->f->get("DB")->log();
-            $result = $this->mapper->save();
-            print_r($result);
-            die();
-            //$this->f->reroute("/signin");
+            //echo $this->f->get("DB")->log();
+            $this->mapper->save();
+            //die();
+            $this->f->reroute("/signin");
         } else {
             //$this->f->reroute("/signup?err=".$err."&".implode("&",$form));
             $this->f->reroute("/signup?err=".$err);
