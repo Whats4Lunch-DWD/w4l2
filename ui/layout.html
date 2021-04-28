@@ -55,7 +55,7 @@
                    <p>
                        <div class="columns field">
                            <div class="column control">
-                               <input id="location" name="location" class="input" type="text" placeholder="Enter your Singapore address or postal code.">
+                               <input id="location" name="location" class="input" type="text" placeholder="Enter your Singapore address or postal code."> <input type="hidden" name="postalcode" />
                                <div class="dropdown-menu" id="location-menu"></div>
                            </div>
                            <div class="column control">
@@ -178,14 +178,19 @@
 
          $(document).ready(function() {
 
-         // Check for click events on the navbar burger icon
-         $(".navbar-burger").click(function() {
+            // Check for click events on the navbar burger icon
+            $(".navbar-burger").click(function() {
 
                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
                $(".navbar-burger").toggleClass("is-active");
                $(".navbar-menu").toggleClass("is-active");
 
             });
+
+            $("#location").on("change", function() {
+               console.log(this.value);
+            });
+
          });
          
      </script>
