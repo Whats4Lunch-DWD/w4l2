@@ -211,6 +211,14 @@ $f3->route('GET /cart',
     $data = $controller->getCart($_SESSION["CART_SESSION"]);
     $f3->set('cart',$data);
     $f3->set("location",$_GET["location"]);
+
+    if ($_GET["location"]=="") {
+      $location = $_GET["location"];
+      $arr_location = explode($location);
+      $pcode = array_pop($arr_location);
+      $f3->set("pcode",$pcode);
+    }
+
     $f3->set('html_title','Cart - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
     $f3->set('content','cart.html');
     echo Template::instance()->render('layout.html');
