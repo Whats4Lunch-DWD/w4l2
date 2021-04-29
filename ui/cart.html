@@ -156,6 +156,21 @@
                         </check>
                     </div>
                 </div>
+                <check if="{{ @username }}">
+                    <true>
+                        <div class="columns">
+                            <div class="column">
+                               <input id="saveaddress" name="saveaddress" /> Save Address in Profile 
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                               <input id="saveorder" name="saveorder" /> Save Order as Favourites 
+                            </div>
+                        </div>
+                    </true>
+                </check>
+                </div>
             </div>
             <div class="column"><input name="cart_id" type="hidden" value="{{ @cart.cart->id }}" /></div>
         </div>
