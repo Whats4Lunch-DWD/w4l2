@@ -212,7 +212,7 @@ $f3->route('GET /cart',
     $f3->set('cart',$data);
     $f3->set("location",$_GET["location"]);
 
-    if ($_GET["location"]=="") {
+    if ($_GET["location"]!="") {
       $location = $_GET["location"];
       $arr_location = explode($location);
       $pcode = array_pop($arr_location);
