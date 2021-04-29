@@ -30,7 +30,7 @@
                         </div>
                         <div class="card-footer">
                             <div class="card-footer-item">${{ trim(@result.menu.price) }}</div>
-                            <div class="card-footer-item"><a href="{{ @BASE }}/cart/add/{{ @result.menu.id }}"><img src="{{ @BASE }}/ui/images/add-to-shopping-cart.png" alt="add to cart" /></a></div>
+                            <div class="card-footer-item"><a href="{{ @BASE }}/cart/add/{{ @result.menu.id }}?location={{ @location }}"><img src="{{ @BASE }}/ui/images/add-to-shopping-cart.png" alt="add to cart" /></a></div>
                         </div>
                     </div>
                 </div>
