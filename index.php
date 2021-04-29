@@ -210,6 +210,7 @@ $f3->route('GET /cart',
     $controller = new CartsController;
     $data = $controller->getCart($_SESSION["CART_SESSION"]);
     $f3->set('cart',$data);
+    $f3->set("location",$_GET["location"]);
     $f3->set('html_title','Cart - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
     $f3->set('content','cart.html');
     echo Template::instance()->render('layout.html');
@@ -221,6 +222,9 @@ $f3->route('GET /cart/add/@id',
   function ($f3, $args) {
     $controller = new CartsController;
     $data = $controller->add($args['id']);
+    if ($_GET["location"]!="") {
+      $f3->reroute('/cart?location='.$_GET["location"]);
+    }
     $f3->reroute('/cart');
   }
 );
