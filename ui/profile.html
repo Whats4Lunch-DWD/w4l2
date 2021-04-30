@@ -28,14 +28,14 @@
                 To change address, simply make a new order from the new address and select the option to save it to the profile to overwrite it.
 
                 <h3>My Transactions</h3>
-                <check if="{{ @records.results }}">
+                <check if="{{ @transactions.results }}">
                     <true>
                         <set ctr="{{ 0 }}" />
                         <check if="{{ @ctr }}">
                             <true></true>
                             <false><div class="columns"></false>
                         </check>
-                        <repeat group="{{ @records.results }}" value="{{ @record }}" counter="{{ @ctr }}">
+                        <repeat group="{{ @transactions.results }}" value="{{ @transactions }}" counter="{{ @ctr }}">
                         </repeat>
                     </true>
                 </check>

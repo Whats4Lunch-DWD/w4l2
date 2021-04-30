@@ -2,6 +2,7 @@
 
 class UsersController {
 	private $mapper;
+    private $txn_mapper;
     var $f;
 
 	public function __construct() {
@@ -9,6 +10,7 @@ class UsersController {
         $this->f = $f3;
 		$this->mapper = new DB\SQL\Mapper($f3->get('DB'),"users");	// create DB query mapper object	
         $this->checker = new DB\SQL\Mapper($f3->get('DB'),"users");	// create DB query mapper object	
+        $this->txn_mapper = new DB\SQL\Mapper($f3->get('DB'),"transactions");	// create DB query mapper object	
     }
 
     public function signup($form) {
@@ -138,7 +140,10 @@ class UsersController {
     }
 
     public function userTransactions($username) {
-        
+        $user = $this->showProfile($username);
+        $transactions = $this->txn_mapper->find(array("user_id=?",$user["id"]));
+
+        return $transactions;
     }
 
 }
