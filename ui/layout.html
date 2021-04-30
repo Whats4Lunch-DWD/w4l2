@@ -44,7 +44,14 @@
                                  <a class="navbar-item" href="{{@BASE}}/signin/">Sign In</a>
                               </false>
                            </check>
-                           <a class="navbar-item" href="{{@BASE}}/cart/"><img src="{{ @BASE }}/ui/images/shopping-cart.png" alt="Cart" /></a>
+                           <check if="{{ @location }}">
+                              <true>
+                                 <a class="navbar-item" href="{{@BASE}}/cart/?location={{ @location }}"><img src="{{ @BASE }}/ui/images/shopping-cart.png" alt="Cart" /></a>
+                              </true>
+                              <false>
+                                 <a class="navbar-item" href="{{@BASE}}/cart/"><img src="{{ @BASE }}/ui/images/shopping-cart.png" alt="Cart" /></a>
+                              </false>
+                           </check>
                         </div>
                      </div>
                   </nav>
