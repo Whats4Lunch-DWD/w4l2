@@ -57,6 +57,12 @@ $f3->route('GET /',
     $controller = new RestaurantController;
     $data = $controller->showcaseRestaurants();
     $f3->set("records", $data);
+
+    if ($_SESSION["username"]!="") {
+      $user_controller = new UsersController;
+      $user = $controller->showProfile($_SESSION["username"]);
+      $f3->set("saved_address",$user["address1"]);
+    }
     
     $f3->set('html_title','Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
     $f3->set('content','home.html');

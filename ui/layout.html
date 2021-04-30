@@ -64,7 +64,14 @@
                    <p>
                        <div class="columns field">
                            <div class="column control">
-                               <input id="location" name="location" class="input" type="text" placeholder="Enter your Singapore address or postal code."> <input type="hidden" name="postalcode" />
+                              <check if="{{ @saved_address!='' }}">
+                                 <true>
+                                    <input id="location" name="location" class="input" type="text" placeholder="Enter your Singapore address or postal code." value="{{ @saved_address }}">
+                                 </true>
+                                 <false>
+                                    <input id="location" name="location" class="input" type="text" placeholder="Enter your Singapore address or postal code.">
+                                 </false>
+                              </check>
                                <div class="dropdown-menu" id="location-menu"></div>
                            </div>
                            <div class="column control">
