@@ -39,10 +39,10 @@ class TransactionsController {
             $this->mapper["customer_id"]=$this->user_mapper["id"];
         }
 
-        //echo "<pre>";
-        //print_r($this->mapper);
-        //echo "</pre>";
-        //die();
+        echo "<pre>";
+        print_r($this->mapper);
+        echo "</pre>";
+        die();
 
 
         $_SESSION["CART_SESSION"]=null;
