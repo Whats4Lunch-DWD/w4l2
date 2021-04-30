@@ -152,6 +152,8 @@ class UsersController {
 
         $transactions["results"]["cart_items"]=$t_cart_items;
 
+        print_r($transactions["results"]["cart_items"]);
+
         return $transactions;
     }
 
