@@ -21,7 +21,7 @@ class TransactionsController {
         $this->mapper->dry();
 
         foreach($cart as $cart_key => $cart_value) {
-            if ($cart_key=="saveaddress" or $cart_key=="saveorder") {
+            if ($cart_key=="saveaddress") {
                 // Do nothing
             } else {
                 if ($cart_key!="address2") {
@@ -49,10 +49,6 @@ class TransactionsController {
             $this->saveAddressToProfile($cart["address1"]);
         }
 
-        if ($cart["saveorder"]=="1") {
-            $this->saveOrderToFavs($this->mapper["id"]);
-        }
-
         return $this->mapper["id"];
     }
 
@@ -77,9 +73,5 @@ class TransactionsController {
         //die();
 
         $this->user_mapper->save();
-    }
-
-    public function saveOrderToFavs($cart_id) {
-
     }
 }
