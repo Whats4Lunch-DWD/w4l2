@@ -19,7 +19,11 @@ class TransactionsController {
         $this->mapper->dry();
 
         foreach($cart as $cart_key => $cart_value) {
-            $this->mapper[$cart_key]=$cart_value;
+            if ($cart_key=="saveaddress" or $cart_key=="saveorder") {
+                // do nothing
+            } else {
+                $this->mapper[$cart_key]=$cart_value;
+            }
         }
         $this->mapper["status"]="in_progress";
 
