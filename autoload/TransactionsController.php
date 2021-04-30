@@ -16,8 +16,8 @@ class TransactionsController {
     }
     
     public function add($cart) {
-        print_r($cart);
-        die();
+        //print_r($cart);
+        //die();
         $this->mapper->dry();
 
         foreach($cart as $cart_key => $cart_value) {
@@ -32,7 +32,7 @@ class TransactionsController {
                 $this->mapper[$cart_key]=$cart_value;
 
                 // todo. currently not working
-                if ($cart["saveaddress"]==1 and $cart_key=="address1" and $cart_value!="") {
+                if ($cart["saveaddress"]=="on" and $cart_key=="address1" and $cart_value!="") {
                     echo $cart_value;
                     die();
                     $this->saveAddressToProfile($cart_value);
