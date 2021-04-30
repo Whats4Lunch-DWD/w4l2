@@ -39,9 +39,8 @@ if (isset($_SESSION["phone"]) and !is_null($_SESSION["phone"])) {
 }
 
 
-echo $_GET["location"];
 if ($_GET["location"]!="") {
-  $location = $_GET["location"];
+  $location = $_GET["location"]; echo $_GET["location"]."abc";
   $arr_location = explode(" ", $location);
   $pcode = array_pop($arr_location);
   $f3->set("location",$location);
