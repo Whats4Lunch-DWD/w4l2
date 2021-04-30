@@ -137,6 +137,10 @@ select.home-select {
     padding-bottom: 3em;
 }
 
+.cart-warning {
+    margin-top: -2.3em !important;
+}
+
 div.is-left > p {
     text-align: left;
 }
