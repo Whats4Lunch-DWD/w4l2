@@ -60,7 +60,7 @@ $f3->route('GET /',
 
     if ($_SESSION["username"]!="") {
       $user_controller = new UsersController;
-      $user = $controller->showProfile($_SESSION["username"]);
+      $user = $user_controller->showProfile($_SESSION["username"]);
       $f3->set("saved_address",$user["address1"]);
     }
     
