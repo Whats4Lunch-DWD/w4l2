@@ -127,12 +127,12 @@ $f3->route('GET /profile',
   function ($f3) {
     $controller = new UsersController;
     $data = $controller->showProfile($_SESSION["username"]);
-    //$transactions = $controller->userTransactions($_SESSION["username"]);
-    $transactions_sql = "select * from hazrulaz_whats4lunch2.transactions inner join hazrulaz_whats4lunch2.cart_items on transactions.cart_id=cart_items.cart_id where transactions.user_id=".$data["id"];
+    $transactions = $controller->userTransactions($_SESSION["username"]);
+    //$transactions_sql = "select * from hazrulaz_whats4lunch2.transactions inner join hazrulaz_whats4lunch2.cart_items on transactions.cart_id=cart_items.cart_id where transactions.user_id=".$data["id"];
     //echo $transactions_sql;
-    $transactions["results"] = $f3->get('DB')->exec($transactions_sql);
+    //$transactions["results"] = $f3->get('DB')->exec($transactions_sql);
 
-    print_r($transactions);
+    //print_r($transactions);
     
     $f3->set("user",$data);
     $f3->set("transactions",$transactions);
