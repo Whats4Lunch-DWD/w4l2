@@ -128,7 +128,7 @@ $f3->route('GET /profile',
     $controller = new UsersController;
     $data = $controller->showProfile($_SESSION["username"]);
     //$transactions = $controller->userTransactions($_SESSION["username"]);
-    $transactions = "select * from hazrulaz_whats4lunch.transactions inner join hazrulaz_whats4lunch.cart_items on transactions.cart_id=cart_items.cart_id where transactions.user_id=".$data["id"];
+    $transactions = "select * from hazrulaz_whats4lunch2.transactions inner join hazrulaz_whats4lunch2.cart_items on transactions.cart_id=cart_items.cart_id where transactions.user_id=".$data["id"];
     //echo $sql;
     
     $f3->set("user",$data);
@@ -156,7 +156,7 @@ $f3->route('GET /search',
       if ($query["allergy"]!="") {
         $criteria .= "and allergen not like '%".$query["allergy"]."%'";
       }
-      $sql = "select distinct restaurant_id, restaurant_name, restaurants.image from hazrulaz_whats4lunch.menus inner join hazrulaz_whats4lunch.restaurants on menus.restaurant_id=restaurants.id where ".$criteria;
+      $sql = "select distinct restaurant_id, restaurant_name, restaurants.image from hazrulaz_whats4lunch2.menus inner join hazrulaz_whats4lunch2.restaurants on menus.restaurant_id=restaurants.id where ".$criteria;
       //echo $sql;
       $f3->set('results',$f3->get('DB')->exec($sql));
 
@@ -168,7 +168,7 @@ $f3->route('GET /search',
       } else {
         $criteria .= ")";
       }
-      $count_sql = "select count(distinct restaurant_id) as max_records from hazrulaz_whats4lunch.menus inner join hazrulaz_whats4lunch.restaurants on menus.restaurant_id=restaurants.id where ".$criteria;
+      $count_sql = "select count(distinct restaurant_id) as max_records from hazrulaz_whats4lunch2.menus inner join hazrulaz_whats4lunch2.restaurants on menus.restaurant_id=restaurants.id where ".$criteria;
       //echo $sql;
       $f3->set('sum_of_records',$f3->get('DB')->exec($count_sql));
       $max_records = $f3->get('sum_of_records');
@@ -180,7 +180,7 @@ $f3->route('GET /search',
       //print_r($max_records["0"]["max_records"]);
       
       $criteria .= " and restaurants.id=".random_int(1,$max);
-      $sql = "select distinct restaurant_id, restaurant_name, restaurants.image from hazrulaz_whats4lunch.menus inner join hazrulaz_whats4lunch.restaurants on menus.restaurant_id=restaurants.id where ".$criteria;
+      $sql = "select distinct restaurant_id, restaurant_name, restaurants.image from hazrulaz_whats4lunch2.menus inner join hazrulaz_whats4lunch2.restaurants on menus.restaurant_id=restaurants.id where ".$criteria;
       $f3->set('results',$f3->get('DB')->exec($sql));
     }
     $f3->set('location', $_GET["location"]);
