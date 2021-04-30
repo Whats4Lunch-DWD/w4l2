@@ -1,0 +1,26 @@
+/* 
+
+to change any style, override them in this file. 
+this way, the original is preserved and the changes are not destructive.
+
+example:
+
+if in style.css, there is a style like this:
+
+.aclassname {
+    font-size: 10px;
+}
+
+And you wanted to change the font size without affecting the style.css.
+So you re-declare the css in ryan.css
+
+.aclassname {
+    font-size: 12px !important;
+}
+
+And then, git commit/push the changes, and it will reflect on the website.
+
+If you are adding a new property to the same class, or a new property to a new class, then there is no need to declare
+!important after the property.
+
+*/
