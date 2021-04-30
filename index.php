@@ -132,7 +132,7 @@ $f3->route('GET /profile',
     //echo $transactions_sql;
     $transactions["results"] = $f3->get('DB')->exec($transactions_sql);
 
-    //print_r($transactions);
+    print_r($transactions);
     
     $f3->set("user",$data);
     $f3->set("transactions",$transactions);
