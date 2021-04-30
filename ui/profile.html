@@ -33,7 +33,8 @@
                         <repeat group="{{ @transactions.results }}" value="{{ @transaction }}">
                             <div class="columns">
                                 <div class="column">
-                                    {{ @transaction.cart_id }} {{ @transaction.total_price }}
+                                    Order Num: {{ @transaction.id }} <br />
+                                    Total Price: ${{ @transaction.total_price }}
                                 </div>
                             </div>
                         </repeat>
