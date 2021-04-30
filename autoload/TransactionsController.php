@@ -22,6 +22,11 @@ class TransactionsController {
             if ($cart_key=="saveaddress" or $cart_key=="saveorder") {
                 // do nothing
             } else {
+                if ($cart_key!="address2") {
+                    if ($cart_value=="") {
+                        return 0;
+                    }
+                }
                 $this->mapper[$cart_key]=$cart_value;
             }
         }
@@ -31,6 +36,7 @@ class TransactionsController {
         //print_r($this->mapper);
         //echo "</pre>";
         //die();
+
 
         $_SESSION["CART_SESSION"]=null;
         $this->mapper->save();

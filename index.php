@@ -261,7 +261,12 @@ $f3->route('POST /transactions/add',
     $cart = $f3->get('POST');
     $controller = new TransactionsController;
     $transaction_id = $controller->add($cart);
-    $f3->reroute('/transactions/'.$transaction_id);
+    if ($transaction_id==0) {
+      $f3->reroute('/cart/?err=1&location='.$_GET["location"]);
+    } else {
+      $f3->reroute('/transactions/'.$transaction_id);
+    }
+    
   }
 );
 
