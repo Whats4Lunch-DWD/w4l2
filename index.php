@@ -128,12 +128,12 @@ $f3->route('GET /profile',
     $controller = new UsersController;
     $data = $controller->showProfile($_SESSION["username"]);
     //$transactions = $controller->userTransactions($_SESSION["username"]);
-    $transactions = "select * from hazrulaz_whats4lunch2.transactions inner join hazrulaz_whats4lunch2.cart_items on transactions.cart_id=cart_items.cart_id where transactions.user_id=".$data["id"];
-    //echo $sql;
+    $transactions_sql = "select * from hazrulaz_whats4lunch2.transactions inner join hazrulaz_whats4lunch2.cart_items on transactions.cart_id=cart_items.cart_id where transactions.user_id=".$data["id"];
+    //echo $transactions_sql;
+    $transactions = $f3->get('DB')->exec($transactions_sql);
     
     $f3->set("user",$data);
-    //$f3->set("transactions",$transactions);
-    $f3->set('transactions',$f3->get('DB')->exec($transactions));
+    $f3->set("transactions",$transactions);
     $f3->set('html_title','Profile - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
     $f3->set('content','profile.html');
     echo Template::instance()->render('layout.html');
