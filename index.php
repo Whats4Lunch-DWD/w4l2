@@ -219,6 +219,7 @@ $f3->route('GET /cart',
     $data = $controller->getCart($_SESSION["CART_SESSION"]);
     $f3->set('cart',$data);
     $f3->set("location",$_GET["location"]);
+    $f3->set("err", $_GET["err"]);
 
     if ($_GET["location"]!="") {
       $location = $_GET["location"];
