@@ -38,7 +38,6 @@ if (isset($_SESSION["phone"]) and !is_null($_SESSION["phone"])) {
   $f3->set('phone',$_SESSION["phone"]); 
 }
 
-
 if ($_GET["location"]!="") {
   $location = $_GET["location"];
   $arr_location = explode(" ", $location);
