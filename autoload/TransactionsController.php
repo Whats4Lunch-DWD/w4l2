@@ -30,13 +30,6 @@ class TransactionsController {
                     }
                 }
                 $this->mapper[$cart_key]=$cart_value;
-
-                // todo. currently not working
-                if ($cart["saveaddress"]=="on" and $cart_key=="address1" and $cart_value!="") {
-                    echo $cart_value;
-                    die();
-                    $this->saveAddressToProfile($cart_value);
-                }
             }
         }
         $this->mapper["status"]="in_progress";
@@ -50,6 +43,13 @@ class TransactionsController {
         $_SESSION["CART_SESSION"]=null;
         $this->mapper->save();
 
+
+        // todo. currently not working
+        if ($cart["saveaddress"]=="on" and $cart["address1"]!="") {
+            echo $cart["address1"];
+            die();
+            $this->saveAddressToProfile($cart["address1"]);
+        }
 
         if ($cart["saveorder"]=="1") {
             $this->saveOrderToFavs($this->mapper["id"]);
