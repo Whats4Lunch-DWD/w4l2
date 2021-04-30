@@ -145,9 +145,12 @@ class UsersController {
         $user = $this->showProfile($username);
         $transactions["results"] = $this->txn_mapper->find(array("user_id=?",$user["id"]));
 
+        var $t_cart_items = array();
         foreach($transactions["results"] as $t) {
-            array_push($transactions["results"]["cart_items"],$this->cartTxn($t["cart_id"]));
+            array_push($t_cart_items,$this->cartTxn($t["cart_id"]));
         }
+
+        $transactions["results"]["cart_items"]=$t_cart_items;
 
         return $transactions;
     }
