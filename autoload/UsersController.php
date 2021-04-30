@@ -137,6 +137,10 @@ class UsersController {
         return $user;
     }
 
+    public function userTransactions($username) {
+        
+    }
+
 }
 
 ?>

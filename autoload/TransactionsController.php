@@ -34,6 +34,11 @@ class TransactionsController {
         }
         $this->mapper["status"]="in_progress";
 
+        if ($_SESSION["username"]!="") {
+            $this->user_mapper->load(array("username=?",$_SESSION["username"]));
+            $this->mapper["customer_id"]=$this->user_mapper["id"];
+        }
+
         //echo "<pre>";
         //print_r($this->mapper);
         //echo "</pre>";
