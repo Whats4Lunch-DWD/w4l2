@@ -31,7 +31,10 @@ class TransactionsController {
                 }
                 $this->mapper[$cart_key]=$cart_value;
 
-                if ($cart["saveaddress"]==1 and $cart_key["address1"]!="") {
+                // todo. currently not working
+                if ($cart["saveaddress"]==1 and $cart_key=="address1" and $cart_value!="") {
+                    echo $cart_value;
+                    die();
                     $this->saveAddressToProfile($cart_value);
                 }
             }
