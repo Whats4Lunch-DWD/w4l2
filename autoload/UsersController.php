@@ -142,6 +142,8 @@ class UsersController {
     public function userTransactions($username) {
         $user = $this->showProfile($username);
         $transactions = $this->txn_mapper->find(array("user_id=?",$user["id"]));
+        print_r($transactions);
+        die();
 
         return $transactions;
     }
