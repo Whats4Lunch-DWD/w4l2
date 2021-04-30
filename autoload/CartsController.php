@@ -76,7 +76,7 @@ class CartsController {
         }
 
         
-        echo "<pre>";
+        //echo "<pre>";
         /*print_r($this->cart_items_mapper["cart_id"]);
         echo "<br />";
         print_r($this->cart_items_mapper["id"]);
@@ -84,10 +84,10 @@ class CartsController {
         print_r($this->cart_items_mapper["menu_id"]);
         echo "<br />";
         */
-        echo "<br /> cart items object: <br />";
-        print_r($this->cart_items_mapper);
-        echo "</pre>";
-        die();
+        //echo "<br /> cart items object: <br />";
+        //print_r($this->cart_items_mapper);
+        //echo "</pre>";
+        //die();
         
         
         $this->cart_items_mapper->save();
