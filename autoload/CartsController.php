@@ -75,19 +75,20 @@ class CartsController {
             $this->cart_items_mapper["customer_id"]=$this->user_mapper["id"];
         }
 
-        /*
+        
         echo "<pre>";
-        print_r($this->cart_items_mapper["cart_id"]);
+        /*print_r($this->cart_items_mapper["cart_id"]);
         echo "<br />";
         print_r($this->cart_items_mapper["id"]);
         echo "<br />";
         print_r($this->cart_items_mapper["menu_id"]);
         echo "<br />";
+        */
         echo "<br /> cart items object: <br />";
         print_r($this->cart_items_mapper);
         echo "</pre>";
         die();
-        */
+        
         
         $this->cart_items_mapper->save();
     }
