@@ -153,6 +153,18 @@ class UsersController {
         return $cart_items;
     }
 
+    public function updateAllergen() {
+        $user = $this->mapper->load(array("username = ?",$username)); // get the user data.
+
+        $this->mapper->save();
+    }
+
+    public function updateDiet() {
+        $user = $this->mapper->load(array("username = ?",$username)); // get the user data.
+        
+        $this->mapper->save();
+    }
+
 }
 
 ?>

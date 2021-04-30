@@ -1,6 +1,6 @@
 <div class="content">
     <div class="main-content container">
-        <h2 class="title">Profile</h2>
+        <h2 class="title">Edit Profile</h2>
         <div class="columns">
             <div class="column is-left container profile">
                 <h3>Personal</h3>
@@ -21,36 +21,13 @@
                         <div class="column field is-left">{{ @user.phone }}</div>
                     </div>
                     <div class="columns">
-                        <div class="column label is-left is-one-fifth">Allergy</div>
+                        <div class="column label is-left is-one-fifth">Allergen</div>
                         <div class="column field is-left">{{ @user.allergen }}</div>
                     </div>
                     <div class="columns">
                         <div class="column label is-left is-one-fifth">Diet</div>
                         <div class="column field is-left">{{ @user.diet }}</div>
                     </div>
-
-                <h3>Address</h3>
-                {{ @user.address1 }}<br />
-                {{ @user.address2 }}<br />
-                {{ @user.postalcode }}<br />
-                To change address, simply make a new order from the new address and select the option to save it to the profile to overwrite it.
-
-                <h3>My Transactions</h3>
-                <check if="{{ @transactions.results }}">
-                    <true>
-                        <repeat group="{{ @transactions.results }}" value="{{ @transaction }}">
-                            <div class="columns">
-                                <div class="column">
-                                    Order Num: <a href="{{ @BASE }}/transactions/{{ @transaction.id }}">{{ @transaction.id }}</a> <br />
-                                    Total Price: ${{ @transaction.total_price+3 }}
-                                </div>
-                            </div>
-                        </repeat>
-                    </true>
-                    <false>
-                        No recent transactions available.
-                    </false>
-                </check>
             </div>
         </div>
     </div>
