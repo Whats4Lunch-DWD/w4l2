@@ -16,8 +16,8 @@ class TransactionsController {
     }
     
     public function add($cart) {
-        //print_r($cart);
-        //die();
+        print_r($cart);
+        die();
         $this->mapper->dry();
 
         foreach($cart as $cart_key => $cart_value) {
