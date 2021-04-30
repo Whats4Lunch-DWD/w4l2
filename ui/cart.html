@@ -1,11 +1,11 @@
 <form id="formCheckout" name="formCheckout" method="post" action="{{ @BASE }}/transactions/add?location={{ @location }}">
 <div class="content">
-    <check if="{{ @err==1 }}">
-        <true>
-            <div class="notification is-warning">All fields are mandatory except Address 2. Please fill in any missing fields.</div>
-        </true>
-    </check>
     <div class="main-content container">
+        <check if="{{ @err==1 }}">
+            <true>
+                <div class="notification is-warning">All fields are mandatory except Address 2. Please fill in any missing fields.</div>
+            </true>
+        </check>
         <div class="columns">
             <div class="cart column is-two-thirds">
                 <h3>My Cart</h3>
