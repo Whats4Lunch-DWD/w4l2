@@ -3,6 +3,7 @@
 class UsersController {
 	private $mapper;
     private $txn_mapper;
+    private $cart_items_mapper;
     var $f;
 
 	public function __construct() {
@@ -11,6 +12,7 @@ class UsersController {
 		$this->mapper = new DB\SQL\Mapper($f3->get('DB'),"users");	// create DB query mapper object	
         $this->checker = new DB\SQL\Mapper($f3->get('DB'),"users");	// create DB query mapper object	
         $this->txn_mapper = new DB\SQL\Mapper($f3->get('DB'),"transactions");	// create DB query mapper object	
+        $this->cart_items_mapper = new DB\SQL\Mapper($f3->get('DB'),"cart_items");	// create DB query mapper object	
     }
 
     public function signup($form) {
