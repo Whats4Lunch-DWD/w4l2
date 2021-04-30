@@ -13,6 +13,7 @@ class CartsController {
         $this->mapper = new DB\SQL\Mapper($f3->get('DB'),"carts");	// create DB query mapper object
         $this->cart_items_mapper = new DB\SQL\Mapper($f3->get('DB'),"cart_items");
         $this->menus_mapper = new DB\SQL\Mapper($f3->get('DB'),"menus");	// create DB query mapper object
+        $this->user_mapper = new DB\SQL\Mapper($f3->get('DB'),"users");
     }
     
     public function add($id){
@@ -67,6 +68,12 @@ class CartsController {
         }
 
         $this->cart_items_mapper["cart_id"] = $cart_session[0]["id"];
+
+
+        if ($_SESSION["username"]!="") {
+            $this->user_mapper->load(array("username=?",$_SESSION["username"]));
+            $this->cart_items_mapper["customer_id"]=$this->user_mapper["id"];
+        }
 
         /*
         echo "<pre>";
