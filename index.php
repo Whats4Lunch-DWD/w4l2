@@ -38,6 +38,8 @@ if (isset($_SESSION["phone"]) and !is_null($_SESSION["phone"])) {
   $f3->set('phone',$_SESSION["phone"]); 
 }
 
+
+echo $_GET["location"];
 if ($_GET["location"]!="") {
   $location = $_GET["location"];
   $arr_location = explode(" ", $location);
@@ -171,7 +173,7 @@ $f3->route('GET /search',
       $sql = "select distinct restaurant_id, restaurant_name, restaurants.image from hazrulaz_whats4lunch.menus inner join hazrulaz_whats4lunch.restaurants on menus.restaurant_id=restaurants.id where ".$criteria;
       $f3->set('results',$f3->get('DB')->exec($sql));
     }
-    $f3->set('location', $_GET["location"]); echo $_GET["location"];
+    $f3->set('location', $_GET["location"]);
     $f3->set('html_title','Restaurant - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
     $f3->set('content','restaurants/search_response.html');
     echo Template::instance()->render('layout.html');
