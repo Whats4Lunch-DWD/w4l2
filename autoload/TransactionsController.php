@@ -73,8 +73,8 @@ class TransactionsController {
         $this->user_mapper["address1"]=$address;
         $this->user_mapper["postalcode"]=$pcode;
 
-        print_r($this->user_mapper);
-        die();
+        //print_r($this->user_mapper);
+        //die();
 
         $this->user_mapper->save();
     }
