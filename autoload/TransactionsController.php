@@ -46,8 +46,6 @@ class TransactionsController {
 
         // todo. currently not working
         if ($cart["saveaddress"]=="on" and $cart["address1"]!="") {
-            echo $cart["address1"];
-            die();
             $this->saveAddressToProfile($cart["address1"]);
         }
 
@@ -72,6 +70,10 @@ class TransactionsController {
         $pcode = array_pop($arr_location);
         $this->user_mapper["address1"]=$address;
         $this->user_mapper["postalcode"]=$pcode;
+
+        print_r($this->user_mapper);
+        die();
+
         $this->user_mapper->save();
     }
 
