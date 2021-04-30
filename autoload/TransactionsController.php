@@ -68,6 +68,8 @@ class TransactionsController {
         
         $arr_location = explode(" ", $address);
         $pcode = array_pop($arr_location);
+        $this->user_mapper->load("username=?",$_SESSION["username"]);
+
         $this->user_mapper["address1"]=$address;
         $this->user_mapper["postalcode"]=$pcode;
 
