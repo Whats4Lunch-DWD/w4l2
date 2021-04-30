@@ -148,7 +148,7 @@ class UsersController {
         $t_cart_items = array();
         foreach($transactions["results"] as $t) {
             array_push($t_cart_items,$this->cartTxn($t["cart_id"]));
-            $transactions["results"][$t]["cart_items"]=$t_cart_items;
+            //$transactions["results"][$t]["cart_items"]=$t_cart_items;
         }
 
         print_r($transactions["results"]);
