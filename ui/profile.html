@@ -35,10 +35,12 @@
                             <true></true>
                             <false><div class="columns"></false>
                         </check>
-                        {{ @transactions.results }}
                         <repeat group="{{ @transactions.results }}" value="{{ @transactions }}" counter="{{ @ctr }}">
                         </repeat>
                     </true>
+                    <false>
+                        No recent transactions available.
+                    </false>
                 </check>
             </div>
         </div>
