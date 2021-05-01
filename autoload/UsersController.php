@@ -125,6 +125,7 @@ class UsersController {
             $_SESSION["username"]=$user["username"];
             $_SESSION["name"]=$user["name"];
             $_SESSION["phone"]=$user["phone"];
+            $_SESSION["role"]="admin";
             $this->f->reroute("/admin");
         } else {
             $this->f->reroute("/admin/signin?err=wrongpassword");
