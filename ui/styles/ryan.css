@@ -39,3 +39,9 @@ p.title {
     background-size:cover;
     background-blend-mode: multiply;
 }
+
+a {
+    color:#221F20;
+    cursor:pointer;
+    text-decoration:none;
+ }
