@@ -1,65 +1,72 @@
 <div class="content">
     <div class="main-content container">
         <h2 class="title">Edit Profile</h2>
-        <div class="columns">
-            <div class="column is-left container profile">
-                <h3>Personal</h3>
-                    <div class="columns">
-                        <div class="column label is-left is-one-fifth">Name</div>
-                        <div class="column field is-left"><input type="text" name="name" value="{{ @user.name }}" /></div>
-                    </div>
-                    <div class="columns">
-                        <div class="column label is-left is-one-fifth">Username</div>
-                        <div class="column field is-left">{{ @user.username }}<input type="hidden" name="name" value="{{ @user.username }}" /><input type="hidden" name="id" value="{{ @user.id }}" /></div>
-                    </div>
-                    <div class="columns">
-                        <div class="column label is-left is-one-fifth">Email</div>
-                        <div class="column field is-left"><input type="text" name="name" value="{{ @user.email }}" /></div>
-                    </div>
-                    <div class="columns">
-                        <div class="column label is-left is-one-fifth">Phone</div>
-                        <div class="column field is-left"><input type="text" name="name" value="{{ @user.phone }}" /></div>
-                    </div>
-                    <div class="columns">
-                        <div class="column label is-left is-one-fifth">Allergy</div>
-                        <div class="column field is-left">
-                            <div class="select">
-                                <select id="allergy" name="allergy" class="home-select">
-                                    <option disabled="disabled" selected="selected" hidden="hidden">Select an allergen restriction...</option>
-                                    <option>None</option>
-                                    <option>Corn</option>
-                                    <option>Egg</option>
-                                    <option>Fish</option>
-                                    <option>Meat</option>
-                                    <option>Milk</option>
-                                    <option>Peanut</option>
-                                    <option>Shellfish</option>
-                                    <option>Soy</option>
-                                    <option>Tree Nut</option>
-                                    <option>Wheat</option>
-                                    <option>FPIES</option>
-                                </select>
+        <form id="form" name="frmProfile" action="{{ @BASE }}/profile/edit">
+            <div class="columns">
+                <div class="column is-left container profile">
+                    <h3>Personal</h3>
+                        <div class="columns">
+                            <div class="column label is-left is-one-fifth">Name</div>
+                            <div class="column field is-left"><input type="text" name="name" value="{{ @user.name }}" /></div>
+                        </div>
+                        <div class="columns">
+                            <div class="column label is-left is-one-fifth">Username</div>
+                            <div class="column field is-left">{{ @user.username }}<input type="hidden" name="name" value="{{ @user.username }}" /><input type="hidden" name="id" value="{{ @user.id }}" /></div>
+                        </div>
+                        <div class="columns">
+                            <div class="column label is-left is-one-fifth">Email</div>
+                            <div class="column field is-left"><input type="text" name="name" value="{{ @user.email }}" /></div>
+                        </div>
+                        <div class="columns">
+                            <div class="column label is-left is-one-fifth">Phone</div>
+                            <div class="column field is-left"><input type="text" name="name" value="{{ @user.phone }}" /></div>
+                        </div>
+                        <div class="columns">
+                            <div class="column label is-left is-one-fifth">Allergy</div>
+                            <div class="column field is-left">
+                                <div class="select">
+                                    <select id="allergy" name="allergen" class="home-select">
+                                        <option disabled="disabled" selected="selected" hidden="hidden">Select an allergen restriction...</option>
+                                        <option>None</option>
+                                        <option>Corn</option>
+                                        <option>Egg</option>
+                                        <option>Fish</option>
+                                        <option>Meat</option>
+                                        <option>Milk</option>
+                                        <option>Peanut</option>
+                                        <option>Shellfish</option>
+                                        <option>Soy</option>
+                                        <option>Tree Nut</option>
+                                        <option>Wheat</option>
+                                        <option>FPIES</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="columns">
-                        <div class="column label is-left is-one-fifth">Diet</div>
-                        <div class="column field is-left">
-                            <div class="select">
-                                <select id="diet" name="diet" class="home-select">
-                                    <option disabled="disabled" selected="selected" hidden="hidden">Select a diet restriction...</option>
-                                    <option>None</option>
-                                    <option>Halal</option>
-                                    <option>Keto</option>
-                                    <option>Kosher</option>
-                                    <option>No Beef</option>
-                                    <option>Vegan</option>
-                                    <option>Vegetarian</option>
-                                </select>
+                        <div class="columns">
+                            <div class="column label is-left is-one-fifth">Diet</div>
+                            <div class="column field is-left">
+                                <div class="select">
+                                    <select id="diet" name="diet" class="home-select">
+                                        <option disabled="disabled" selected="selected" hidden="hidden">Select a diet restriction...</option>
+                                        <option>None</option>
+                                        <option>Halal</option>
+                                        <option>Keto</option>
+                                        <option>Kosher</option>
+                                        <option>No Beef</option>
+                                        <option>Vegan</option>
+                                        <option>Vegetarian</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="columns">
+                            <div class="column">
+                                <button>Save</button>
+                            </div>
+                        </div>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
