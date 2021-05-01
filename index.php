@@ -158,7 +158,7 @@ $f3->route('POST /profile/edit',
     $controller = new UsersController;
     $data = $controller->updateProfile($_POST);
     
-    $f3->reroute('/profile/edit');
+    $f3->reroute('/profile');
   }
 );
 
