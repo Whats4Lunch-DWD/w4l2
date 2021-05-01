@@ -25,9 +25,9 @@ If you are adding a new property to the same class, or a new property to a new c
 
 */
 
-h2.title, span.sub-title, p.title {
+/* h2.title, span.sub-title, p.title {
     font-family: 'Courgette','Great Vibes', 'Open Sans', cursive !important;
-} 
+}  */
 
 p.title {
     color: #221F20 !important;
