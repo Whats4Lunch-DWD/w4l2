@@ -33,3 +33,9 @@ p.title {
     color: #fff  !important;
     font-size: 2rem !important;
 }
+
+.myhero {
+    background: url("../images/hero2.png") rgba(0, 0, 0, 0) 50% 50% !important;
+    background-size:cover;
+    background-blend-mode: multiply;
+}
