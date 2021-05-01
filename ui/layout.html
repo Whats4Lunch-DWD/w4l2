@@ -82,31 +82,164 @@
                            <div class="column control">
                                <div class="select">
                                    <select id="diet" name="diet" class="home-select">
-                                       <option disabled="disabled" selected="selected" hidden="hidden">Select a diet restriction...</option>
-                                       <option>Halal</option>
-                                       <option>Keto</option>
-                                       <option>Kosher</option>
-                                       <option>No Beef</option>
-                                       <option>Vegan</option>
-                                       <option>Vegetarian</option>
+                                    <check if="{{ @user.diet=='' or @user.diet=='None' }}">
+                                       <true>
+                                           <option disabled="disabled" selected="selected" hidden="hidden">Select a diet restriction...</option>
+                                       </true>
+                                       <false>
+                                           <option disabled="disabled" hidden="hidden">Select a diet restriction...</option>
+                                       </false>
+                                   </check>
+                                   <check if="{{ @user.diet=='Halal' }}">
+                                       <true>
+                                           <option>Halal</option>
+                                       </true>
+                                       <false>
+                                           <option>Halal</option>
+                                       </false>
+                                   </check>
+                                   <check if="{{ @user.diet=='Keto' }}">
+                                       <true>
+                                           <option selected="selected">Keto</option>
+                                       </true>
+                                       <false>
+                                           <option>Keto</option>
+                                       </false>
+                                   </check>
+                                   <check if="{{ @user.diet=='Kosher' }}">
+                                       <true>
+                                           <option selected="selected">Kosher</option>
+                                       </true>
+                                       <false>
+                                           <option>Kosher</option>
+                                       </false>
+                                   </check>
+                                   <check if="{{ @user.diet=='No Beef' }}">
+                                       <true>
+                                           <option selected="selected">No Beef</option>
+                                       </true>
+                                       <false>
+                                           <option>No Beef</option>
+                                       </false>
+                                   </check>
+                                   <check if="{{ @user.diet=='Vegan' }}">
+                                       <true>
+                                           <option selected="selected">Vegan</option>
+                                       </true>
+                                       <false>
+                                           <option>Vegan</option>
+                                       </false>
+                                   </check>
+                                   <check if="{{ @user.diet=='Vegetarian' }}">
+                                       <true>
+                                           <option selected="selected">Vegetarian</option>
+                                       </true>
+                                       <false>
+                                           <option>Vegetarian</option>
+                                       </false>
+                                   </check>
                                    </select>
                                </div>
                            </div>
                            <div class="column control">
                                <div class="select">
                                    <select id="allergy" name="allergy" class="home-select">
-                                       <option disabled="disabled" selected="selected" hidden="hidden">Select an allergen restriction...</option>
-                                       <option>Corn</option>
-                                       <option>Egg</option>
-                                       <option>Fish</option>
-                                       <option>Meat</option>
-                                       <option>Milk</option>
-                                       <option>Peanut</option>
-                                       <option>Shellfish</option>
-                                       <option>Soy</option>
-                                       <option>Tree Nut</option>
-                                       <option>Wheat</option>
-                                       <option>FPIES</option>
+                                    <check if="{{ @user.allergen=='' or @user.allergen=='None' }}">
+                                       <true>
+                                           <option disabled="disabled" selected="selected" hidden="hidden">Select an allergen restriction...</option>
+                                       </true>
+                                       <false>
+                                           <option disabled="disabled" hidden="hidden">Select an allergen restriction...</option>
+                                       </false>
+                                   </check>
+                                   <check if="{{ @user.allergen=='Corn' }}">
+                                       <true>
+                                           <option selected="selected">Corn</option>
+                                       </true>
+                                       <false>
+                                           <option>Corn</option>
+                                       </false>
+                                   </check>
+                                   <check if="{{ @user.allergen=='Egg' }}">
+                                       <true>
+                                           <option selected="selected">Egg</option>
+                                       </true>
+                                       <false>
+                                           <option>Egg</option>
+                                       </false>
+                                   </check>
+                                   <check if="{{ @user.allergen=='Fish' }}">
+                                       <true>
+                                           <option selected="selected">Fish</option>
+                                       </true>
+                                       <false>
+                                           <option>Fish</option>
+                                       </false>
+                                   </check>
+                                   <check if="{{ @user.allergen=='Meat' }}">
+                                       <true>
+                                           <option selected="selected">Meat</option>
+                                       </true>
+                                       <false>
+                                           <option>Meat</option>
+                                       </false>
+                                   </check>
+                                   <check if="{{ @user.allergen=='Milk' }}">
+                                       <true>
+                                           <option selected="selected">Milk</option>
+                                       </true>
+                                       <false>
+                                           <option>Milk</option>
+                                       </false>
+                                   </check>
+                                   <check if="{{ @user.allergen=='Peanut' }}">
+                                       <true>
+                                           <option selected="selected">Peanut</option>
+                                       </true>
+                                       <false>
+                                           <option>Peanut</option>
+                                       </false>
+                                   </check>
+                                   <check if="{{ @user.allergen=='Shellfish' }}">
+                                       <true>
+                                           <option selected="selected">Shellfish</option>
+                                       </true>
+                                       <false>
+                                           <option>Shellfish</option>
+                                       </false>
+                                   </check>
+                                   <check if="{{ @user.allergen=='Soy' }}">
+                                       <true>
+                                           <option selected="selected">Soy</option>
+                                       </true>
+                                       <false>
+                                           <option>Soy</option>
+                                       </false>
+                                   </check>
+                                   <check if="{{ @user.allergen=='Tree Nut' }}">
+                                       <true>
+                                           <option selected="selected">Tree Nut</option>
+                                       </true>
+                                       <false>
+                                           <option>Tree Nut</option>
+                                       </false>
+                                   </check>
+                                   <check if="{{ @user.allergen=='Wheat' }}">
+                                       <true>
+                                           <option selected="selected">Wheat</option>
+                                       </true>
+                                       <false>
+                                           <option>Wheat</option>
+                                       </false>
+                                   </check>
+                                   <check if="{{ @user.allergen=='FPIES' }}">
+                                       <true>
+                                           <option>FPIES</option>
+                                       </true>
+                                       <false>
+                                           <option>FPIES</option>
+                                       </false>
+                                   </check>
                                    </select>
                                </div>
                            </div>
