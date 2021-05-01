@@ -162,6 +162,8 @@ class UsersController {
         }
 
         $this->mapper->save();
+
+        return $this->showProfile($_SESSION["username"]);
     }
 
 }
