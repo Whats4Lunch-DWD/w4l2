@@ -87,6 +87,20 @@ $f3->route('GET /signin',
   }
 );
 
+$f3->route('GET /admin/signin',
+  function ($f3) {
+
+    $f3->set('html_title','Admin Sign In - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
+    $f3->set('content','admin/sign-in.html');
+    $f3->set('err',$_GET["err"]);
+
+    if($_GET["signup"]=="success") {
+      $f3->set('signup',$_GET["signup"]);
+    }
+    echo Template::instance()->render('layout.html');
+  }
+);
+
 $f3->route('GET /signup',
   function ($f3) {
 
