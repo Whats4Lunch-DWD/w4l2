@@ -1,0 +1,32 @@
+<div class="content">
+    <div class="main-content container">
+        <h1>Admin Sign In</h1>
+        <check if="{{ @err=='wrongpassword' }}">
+            <true>
+                <div class="notification is-warning">The password is incorrect</div>
+            </true>
+        </check>
+        <check if="{{ @signup }}">
+            <true>
+                <div class="notification is-success">
+                    Sign up is successful! Please login.
+                </div>
+            </true>
+        </check>
+        <form id="frmSignIn" name="frmSignIn" method="POST" action="{{@BASE}}/admin/login">
+            <div class="columns">
+                <div class="column">
+                    <input type="text" name="username" id="username" placeholder="Username" class="input" />
+                </div>
+                <div class="column">
+                    <input type="password" name="password" id="password" placeholder="Password" class="input" />
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <button class="button is-primary" name="login">Login</button>  <a href="{{ @BASE }}/signup" class="button">No account? Sign Up</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

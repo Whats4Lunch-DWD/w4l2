@@ -117,6 +117,13 @@ $f3->route('POST /login',
   }
 );
 
+$f3->route('POST /admin/login',
+  function ($f3) {
+    $controller = new UsersController;
+    $auth = $controller->admin_login($_POST["username"],$_POST["password"]);
+  }
+);
+
 $f3->route('GET /signout',
   function ($f3) {
     $controller = new UsersController;
@@ -321,6 +328,14 @@ $f3->route('GET /sign-in',
   function ($f3) {
     $f3->set('html_title','Sign In - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
     $f3->set('content','sign-in.html');
+    echo Template::instance()->render('layout.html');
+  }
+);
+
+$f3->route('GET /admin/sign-in',
+  function ($f3) {
+    $f3->set('html_title','Admin Sign In - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
+    $f3->set('content','admin/sign-in.html');
     echo Template::instance()->render('layout.html');
   }
 );

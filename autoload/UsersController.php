@@ -10,7 +10,9 @@ class UsersController {
 		global $f3;
         $this->f = $f3;
 		$this->mapper = new DB\SQL\Mapper($f3->get('DB'),"users");	// create DB query mapper object	
-        $this->checker = new DB\SQL\Mapper($f3->get('DB'),"users");	// create DB query mapper object	
+        $this->checker = new DB\SQL\Mapper($f3->get('DB'),"users");	// create DB query mapper object
+        $this->admin_mapper = new DB\SQL\Mapper($f3->get('DB'),"admins");	// create DB query mapper object	
+        $this->admin_checker = new DB\SQL\Mapper($f3->get('DB'),"admins");	// create DB query mapper object	
         $this->txn_mapper = new DB\SQL\Mapper($f3->get('DB'),"transactions");	// create DB query mapper object	
         $this->cart_items_mapper = new DB\SQL\Mapper($f3->get('DB'),"cart_items");	// create DB query mapper object	
     }
@@ -112,6 +114,20 @@ class UsersController {
             $this->f->reroute("/");
         } else {
             $this->f->reroute("/signin?err=wrongpassword");
+        }
+        
+    }
+
+    public function admin_login($username, $password) {        
+        $user = $this->admin_mapper->load(array("username = ?",$username)); // get the user data. we want to get the hashed_password.
+
+        if (password_verify($password,$user["password"])) {
+            $_SESSION["username"]=$user["username"];
+            $_SESSION["name"]=$user["name"];
+            $_SESSION["phone"]=$user["phone"];
+            $this->f->reroute("/admin");
+        } else {
+            $this->f->reroute("/admin/signin?err=wrongpassword");
         }
         
     }
