@@ -30,7 +30,7 @@ h2.title, span.sub-title, p.title {
 } 
 
 p.title {
-    color: #221F20  !important;
+    color: #fff !important;
     font-size: 2rem !important;
 }
 
@@ -38,4 +38,16 @@ p.title {
     background: url("../images/hero2.png") rgba(0, 0, 0, 0) 50% 50% !important;
     background-size:cover;
     background-blend-mode: multiply;
+}
+
+a {
+    color:#221F20 !important;
+    cursor:pointer;
+    text-decoration:none;
+ }
+
+.content figure {
+    margin-left: 0em !important;
+    margin-right: 0em !important;
+    text-align: center;
 }
