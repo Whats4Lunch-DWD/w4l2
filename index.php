@@ -157,10 +157,8 @@ $f3->route('POST /profile/edit',
   function ($f3) {
     $controller = new UsersController;
     $data = $controller->updateProfile($_POST);
-    $f3->set("user",$data);
-    $f3->set('html_title','Edit Profile - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
-    $f3->set('content','edit_profile.html');
-    echo Template::instance()->render('layout.html');
+    
+    $f3->reroute('/profile/edit');
   }
 );
 
