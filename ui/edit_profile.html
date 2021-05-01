@@ -22,11 +22,40 @@
                     </div>
                     <div class="columns">
                         <div class="column label is-left is-one-fifth">Allergy</div>
-                        <div class="column field is-left"><input type="text" name="name" value="{{ @user.allergen }}" /></div>
+                        <div class="column field is-left">
+                            <div class="select">
+                                <select id="allergy" name="allergy" class="home-select">
+                                    <option disabled="disabled" selected="selected" hidden="hidden">Select an allergen restriction...</option>
+                                    <option>Corn</option>
+                                    <option>Egg</option>
+                                    <option>Fish</option>
+                                    <option>Meat</option>
+                                    <option>Milk</option>
+                                    <option>Peanut</option>
+                                    <option>Shellfish</option>
+                                    <option>Soy</option>
+                                    <option>Tree Nut</option>
+                                    <option>Wheat</option>
+                                    <option>FPIES</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="columns">
                         <div class="column label is-left is-one-fifth">Diet</div>
-                        <div class="column field is-left"><input type="text" name="name" value="{{ @user.diet }}" /></div>
+                        <div class="column field is-left">
+                            <div class="select">
+                                <select id="diet" name="diet" class="home-select">
+                                    <option disabled="disabled" selected="selected" hidden="hidden">Select a diet restriction...</option>
+                                    <option>Halal</option>
+                                    <option>Keto</option>
+                                    <option>Kosher</option>
+                                    <option>No Beef</option>
+                                    <option>Vegan</option>
+                                    <option>Vegetarian</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
             </div>
         </div>
