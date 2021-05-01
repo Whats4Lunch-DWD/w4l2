@@ -41,7 +41,7 @@ p.title {
 }
 
 a {
-    color:#221F20;
+    color:#221F20 !important;
     cursor:pointer;
     text-decoration:none;
  }
