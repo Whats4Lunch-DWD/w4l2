@@ -145,6 +145,14 @@ $f3->route('GET /signout',
   }
 );
 
+$f3->route('GET /admin',
+  function ($f3) {
+    // restos
+    // menus
+    // orders
+  }
+);
+
 $f3->route('GET /profile',
   function ($f3) {
     $controller = new UsersController;
