@@ -3,6 +3,11 @@
         <h2>{{ @result.restaurant.restaurant_name }}</h2>
 
         <h3>Menu</h3>
+
+        <div class="container admin-sub-menu">
+            <a href="{{ @BASE }}/admin" class="button">Dashboard</a> <a href="{{ @BASE }}/admin/restaurants" class="button">Restaurants</a> <a href="{{ @BASE }}/admin/add_menu" class="button">Add Menu</a>
+        </div>
+
         <check if="{{ @result.menu }}">
             <set ctr="{{ 0 }}" />
             <check if="{{ @ctr }}">
