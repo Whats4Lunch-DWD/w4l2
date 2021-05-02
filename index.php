@@ -19,6 +19,7 @@ $f3->get('DB')->exec("set sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZER
 
 $f3->set('DEBUG',3);		// set maximum debug level
 $f3->set('UI','ui/');		// folder for View templates
+$f3->set('UPLOADS','uploads/');
 
 session_start();
 if (!isset($_SESSION["CART_SESSION"])) {
