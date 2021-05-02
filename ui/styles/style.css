@@ -192,6 +192,10 @@ footer.footer .container {
     color: rgba(255, 255, 255, 0.7);
 }
 
+footer.footer a {
+    color: #5AC475;
+}
+
 .admin-sub-menu {
     padding-bottom: 20px;
 }
