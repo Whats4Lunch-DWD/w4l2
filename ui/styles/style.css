@@ -201,5 +201,6 @@ footer.footer a {
 }
 
 .txnicon {
-    height: 100px;
+    height: 100px !important;
+    max-width: auto !important;
 }
