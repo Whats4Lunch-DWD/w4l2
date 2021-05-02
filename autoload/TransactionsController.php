@@ -71,6 +71,13 @@ class TransactionsController {
         return $transaction_cart_items;
     }
 
+    public function updateTransactionStatus($data) {
+        $this->mapper->load(array("id=?",$data["id"]));
+        $this->mapper["status"] = data["status"];
+        $this->mapper->save();
+        
+        return $this->getTransaction($data["id"]);
+    }
 
     public function saveAddressToProfile($address) {
         
