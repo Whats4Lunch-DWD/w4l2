@@ -2,5 +2,86 @@
     <div class="main-content container">
         <h1>Add Menu</h1>
         {{ @resto_id }}
+        <form id="frmMenu" name="frmMenu" method="POST" action="{{ @BASE }}/admin/add_menu">
+            <input name="restaurant_id" value="{{ @resto_id }}" type="hidden" />
+            <div class="columns">
+                <div class="column label">
+                    Dish Name
+                </div>
+                <div class="column field">
+                    <input id="dish_name" name="dish_name" type="text" />
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column label">
+                    Image
+                </div>
+                <div class="column field">
+                    <input id="image" name="image" type="file" />
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column label">
+                    Description
+                </div>
+                <div class="column field">
+                    <textarea id="description" name="description"></textarea>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column label">
+                    Diet this dish is suitable for
+                </div>
+                <div class="column field">
+                    <div class="select">
+                        <select id="diet" name="diet" class="home-select">
+                            <option disabled="disabled" selected="selected" hidden="hidden">Select a diet restriction...</option>
+                            <option>Halal</option>
+                            <option>Keto</option>
+                            <option>Kosher</option>
+                            <option>No Beef</option>
+                            <option>Vegan</option>
+                            <option>Vegetarian</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column label">
+                    Allergen this dish contains 
+                </div>
+                <div class="column field">
+                    <div class="select">
+                        <select id="allergy" name="allergen" class="home-select">
+                            <option disabled="disabled" selected="selected" hidden="hidden">Select an allergen restriction...</option>
+                            <option>Corn</option>
+                            <option>Egg</option>
+                            <option>Fish</option>
+                            <option>Meat</option>
+                            <option>Milk</option>
+                            <option>Peanut</option>
+                            <option>Shellfish</option>
+                            <option>Soy</option>
+                            <option>Tree Nut</option>
+                            <option>Wheat</option>
+                            <option>FPIES</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column label">
+                    Price
+                </div>
+                <div class="column field">
+                    <input id="price" name="price" type="text" />
+                </div>
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-primary">Create Dish</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
