@@ -64,6 +64,13 @@ a {
     color: #fff;
 }
 
+.content {
+    background-color: #FAF8F5 !important; 
+    background: url("../images/illustration background.png") -120px -120px !important;
+    text-align: center;
+    margin-bottom: 0 !important;
+}
+
 
 
     
