@@ -390,6 +390,7 @@ $f3->route('GET /admin/restaurants/show/@id',
     $controller = new RestaurantController;
     //print_r($args);
     $data = $controller->getRestaurant($args['id']);
+    $f3->set('err',$_GET["err"]);
     $f3->set('addmenu_success',$_GET["success"]);
     $f3->set('result',$data);
     $f3->set('resto_id',$args['id']);
