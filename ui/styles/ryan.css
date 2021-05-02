@@ -66,7 +66,8 @@ a {
 
 .content {
     background-color: #FAF8F5 !important; 
-    background: url("../images/illustration background.png");
+/*     background: url("../images/illustration background.png"); */
+    background: url("../images/background.png") 120px 120px;
     background-repeat: no-repeat;
     text-align: center;
     margin-bottom: 0 !important;
