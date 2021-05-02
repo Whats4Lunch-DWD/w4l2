@@ -16,8 +16,19 @@ class RestaurantController {
     }
     
     public function addRestaurant($data) {
-		$this->reset();
+		$this->mapper->dry();
+		foreach($data as $key => $value) {
+			if ($key == "image" or $key == "address2") {
+				// do nothing
+			} else {
+				if ($value=="") {
+					return array("err"=>"Everything is mandatory except image, and address2");
+				}
+			}
+        	$this->mapper[$key]=$value;
+        }
 		$this->mapper->save();									// save new record with these fields
+		return $this->mapper["id"];
 	}
 
 	public function showcaseRestaurants() {

@@ -386,6 +386,19 @@ $f3->route('GET /admin/add_restaurant',
   }
 );
 
+$f3->route('POST /admin/add_restaurant',
+  function ($f3) {
+    $controller = new RestaurantController;
+    $data = $f3->get('POST');
+    $response = $controller->addRestaurant($data);
+    
+    if ($response["err"] != "") {
+      $f3->reroute("/admin/restaurants?err=".$response["err"]);  
+    }
+    $f3->reroute("/admin/restaurants?success=addresto");
+  }
+);
+
 $f3->route('GET /admin/restaurants/show/@id',
   function ($f3,$args) {
     $controller = new RestaurantController;
