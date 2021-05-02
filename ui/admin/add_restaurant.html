@@ -1,6 +1,87 @@
 <div class="content">
     <div class="main-content container">
         <h1>Add Restaurant</h1>
-        
+        <form id="frmResto" name="frmResto" method="POST" action="{{ @BASE }}/admin/add_restaurant">
+            <div class="columns">
+                <div class="column label is-one-fifth">
+                    Restaurant Name
+                </div>
+                <div class="column field">
+                    <input id="restaurant_name" name="restaurant_name" class="input" />
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column label is-one-fifth">
+                    Restaurant Image
+                </div>
+                <div class="column field">
+                    <input id="image" name="image" class="input" />
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column label is-one-fifth">
+                    Address 1
+                </div>
+                <div class="column field">
+                    <input id="address1" name="address1" class="input" />
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column label is-one-fifth">
+                    Address 2
+                </div>
+                <div class="column field">
+                    <input id="address2" name="address2" class="input" />
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column label is-one-fifth">
+                    Postal Code
+                </div>
+                <div class="column field">
+                    <input id="postal_code" name="postal_code" class="input" />
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column label is-one-fifth">
+                    City
+                </div>
+                <div class="column field">
+                    <input id="city" name="city" class="input" />
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column label is-one-fifth">
+                    State
+                </div>
+                <div class="column field">
+                    <input id="state" name="state" class="input" />
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column label is-one-fifth">
+                    Country
+                </div>
+                <div class="column field">
+                    <input id="country" name="country" class="input" />
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column label is-one-fifth">
+                    Latitude
+                </div>
+                <div class="column field">
+                    <input id="latitude" name="latitude" class="input" />
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column label is-one-fifth">
+                    Longitude
+                </div>
+                <div class="column field">
+                    <input id="longitude" name="longitude" class="input" />
+                </div>
+            </div>
+        </form>
     </div>
 </div>
