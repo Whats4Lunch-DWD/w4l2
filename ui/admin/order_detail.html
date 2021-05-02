@@ -1,6 +1,75 @@
 <div class="content">
     <div class="main-content container">
-        <h1>Order Detail</h1>
-        
+        <img src="{{ @BASE }}/ui/images/order-in-progress.png" />
+
+            <div class="columns">
+                <div class="cart column">
+                    <h3>Order Detail</h3>
+    
+                    <div class="columns menu-items">
+                        <div class="column">
+                            Item
+                        </div>
+                        <div class="column">
+                            Quantity
+                        </div>
+                        <div class="column">
+                            Price
+                        </div>
+                    </div>
+                    <repeat group="{{ @transaction_cart_items.cart_items }}" value="{{ @cart_item }}" counter="{{ @ctr }}">
+                        <div class="columns menu-items">
+                            <div class="column">
+                                {{ @cart_item->dish_name }}
+                            </div>
+                            <div class="column">
+                                {{ @cart_item->quantity }}
+                            </div>
+                            <div class="column">
+                                {{ @cart_item->price * @cart_item->quantity }}
+                            </div>
+                        </div>
+                    </repeat>
+                    <div class="columns cart-price">
+                        <div class="column">
+                            
+                        </div>
+                        <div class="column">
+                            Sub-Total:
+                        </div>
+                        <div class="column">
+                            {{ @transaction_cart_items.transaction->total_price }}
+                        </div>
+                    </div>
+                    <div class="columns cart-price">
+                        <div class="column">
+                            
+                        </div>
+                        <div class="column">
+                            Delivery Fee:
+                        </div>
+                        <div class="column">
+                            3.00
+                        </div>
+                    </div>
+                    <div class="columns cart-price">
+                        <div class="column">
+                            
+                        </div>
+                        <div class="column">
+                            Total:
+                        </div>
+                        <div class="column">
+                            {{ @transaction_cart_items.transaction->total_price+3 }}
+                        </div>
+                    </div>
+                    <div class="columns payment-method">
+                        <p><strong>Payment Method</strong>: {{ @transaction_cart_items.transaction->payment_method }}</p>
+                    </div>
+                    <div class="columns delivery-location">
+                        <p><strong>Delivery Location</strong>{{ @transaction_cart_items.transaction->address1 }} {{ @transaction_cart_items.transaction->address2 }} {{ @transaction_cart_items.transaction->postal_code }}</p>
+                    </div>
+                </div>
+            </div>
     </div>
 </div>
