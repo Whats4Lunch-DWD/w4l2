@@ -59,7 +59,7 @@ class TransactionsController {
     }
 
     public function listTransactions() {
-        $transactions["results"] = $this->mapper->find(array("order"=>"status desc"));
+        $transactions["results"] = $this->mapper->find(array("order"=>"status asc"));
 
         return $transactions;
     }
