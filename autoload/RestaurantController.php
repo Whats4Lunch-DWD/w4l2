@@ -56,6 +56,11 @@ class RestaurantController {
 
 	public function addMenu($data) {
 		$this->menus_mapper->dry();
+
+		foreach($data as $key => $value) {
+        	$this->menus_mapper[$key]=$value;
+        }
+
 		$this->menus_mapper->save();
 		return $this->menus_mapper["id"];
 	}
