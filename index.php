@@ -427,7 +427,7 @@ $f3->route('POST /admin/add_menu',
     $controller = new RestaurantController;
     $menu = $f3->get('POST');
     $response = $controller->addMenu($menu);
-    if ($response["err"] == "Everything is mandatory except image and description") {
+    if ($response["err"] != "") {
       $f3->reroute("/admin/restaurants/show/".$menu['restaurant_id']."?err=".$response["err"]);  
     }
     $f3->reroute("/admin/restaurants/show/".$menu['restaurant_id']."?success=addmenu");
@@ -453,7 +453,7 @@ $f3->route('POST /admin/edit_menu/@id',
     $controller = new RestaurantController;
     $menu = $f3->get('POST');
     $response = $controller->editMenu($menu); //print_r($response); die();
-    if ($response["err"] == "Everything is mandatory except image and description") {
+    if ($response["err"] != "") {
       $f3->reroute("/admin/edit_menu/".$args["id"]."?err=".$response["err"]);  
     }
     $f3->reroute("/admin/restaurants/show/".$menu['restaurant_id']."?success=editmenu");
