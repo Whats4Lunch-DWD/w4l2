@@ -73,7 +73,7 @@ class TransactionsController {
 
     public function updateTransactionStatus($data) {
         $this->mapper->load(array("id=?",$data["id"]));
-        $this->mapper["status"] = data["status"];
+        $this->mapper["status"] = $data["status"];
         $this->mapper->save();
         
         return $this->getTransaction($data["id"]);
