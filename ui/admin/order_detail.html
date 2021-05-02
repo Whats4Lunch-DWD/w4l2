@@ -67,6 +67,9 @@
                     <div class="columns delivery-location">
                         <p><strong>Delivery Location</strong>{{ @transaction_cart_items.transaction->address1 }} {{ @transaction_cart_items.transaction->address2 }} {{ @transaction_cart_items.transaction->postal_code }}</p>
                     </div>
+                    <div class="columns status">
+                        <p><strong>Status</strong>: {{ @transaction_cart_items.transaction->status }}</p>
+                    </div>
                 </div>
             </div>
     </div>
