@@ -388,7 +388,7 @@ $f3->route('GET /admin/add_restaurant',
 $f3->route('GET /admin/restaurants/show/@id',
   function ($f3) {
     $controller = new RestaurantController;
-    //print_r($args);
+    print_r($args);
     $data = $controller->getRestaurant($args['id']);
     $f3->set('result',$data);
     print_r($data);
