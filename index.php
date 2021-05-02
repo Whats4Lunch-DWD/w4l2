@@ -390,6 +390,7 @@ $f3->route('GET /admin/restaurants/show/@id',
     $controller = new RestaurantController;
     //print_r($args);
     $data = $controller->getRestaurant($args['id']);
+    $f3->set('addmenu_success',$_GET["success"]);
     $f3->set('result',$data);
     $f3->set('resto_id',$args['id']);
     //print_r($data);
@@ -411,7 +412,6 @@ $f3->route('GET /admin/add_menu',
   function ($f3) {
     $controller = new RestaurantController;
     $restaurant = $controller->getRestaurant($_GET['restaurant']);
-    $f3->set('addmenu_success',$_GET["success"]);
     $f3->set('resto_id',$_GET['restaurant']);
     $f3->set('resto_name',$restaurant['restaurant']['restaurant_name']);
     $f3->set('html_title','Add Menu - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
