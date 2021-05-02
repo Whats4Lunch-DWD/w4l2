@@ -73,15 +73,13 @@ a {
     margin-bottom: 0 !important;
 }
 
-.main-content {
-/*     padding-top: 3em;
-    padding-bottom: 12em; */
+.content {
     min-height: 100vh !important;
     display: flex !important;
     flex-direction: column !important;
+}
+
+.main-content {
+    margin: auto 0 !important;
 } 
 
-footer.footer {
-    margin-top: auto!important;
-} 
-    
