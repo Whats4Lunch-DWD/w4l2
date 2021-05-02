@@ -1,11 +1,10 @@
 <div class="content">
     <div class="main-content container">
-        <h1>Add Menu</h1>
-        Adding menu for {{ @resto_name }}
+        <h1>Add Menu for {{ @resto_name }}</h1>
         <form id="frmMenu" name="frmMenu" method="POST" action="{{ @BASE }}/admin/add_menu">
             <input name="restaurant_id" value="{{ @resto_id }}" type="hidden" />
             <div class="columns">
-                <div class="column label">
+                <div class="column label one-fifth">
                     Dish Name
                 </div>
                 <div class="column field">
@@ -13,7 +12,7 @@
                 </div>
             </div>
             <div class="columns">
-                <div class="column label">
+                <div class="column label one-fifth">
                     Image
                 </div>
                 <div class="column field">
@@ -21,7 +20,7 @@
                 </div>
             </div>
             <div class="columns">
-                <div class="column label">
+                <div class="column label one-fifth">
                     Description
                 </div>
                 <div class="column field">
@@ -29,7 +28,7 @@
                 </div>
             </div>
             <div class="columns">
-                <div class="column label">
+                <div class="column label one-fifth">
                     Diet this dish is suitable for
                 </div>
                 <div class="column field">
@@ -47,7 +46,7 @@
                 </div>
             </div>
             <div class="columns">
-                <div class="column label">
+                <div class="column label one-fifth">
                     Allergen this dish contains 
                 </div>
                 <div class="column field">
@@ -70,7 +69,7 @@
                 </div>
             </div>
             <div class="columns">
-                <div class="column label">
+                <div class="column label one-fifth">
                     Price
                 </div>
                 <div class="column field">
