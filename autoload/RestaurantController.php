@@ -62,6 +62,7 @@ class RestaurantController {
 
 	public function editMenu($data) {
 		//print_r($data); die();
+		$this->menus_mapper->load(array("id=?",$data["id"]));
 		foreach($data as $key => $value) {
 			if ($key == "image" or $key == "description" or $key == "diet" or $key == "allergen") {
 				// do nothing
