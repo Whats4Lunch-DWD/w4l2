@@ -391,6 +391,7 @@ $f3->route('GET /admin/restaurants/show/@id',
     //print_r($args);
     $data = $controller->getRestaurant($args['id']);
     $f3->set('result',$data);
+    $f3->set('resto_id',$args['id']);
     //print_r($data);
     $f3->set('html_title','Restaurant Menu - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
     $f3->set('content','admin/menu.html');
