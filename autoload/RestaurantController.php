@@ -63,7 +63,7 @@ class RestaurantController {
 
 		$this->menus_mapper["image"] = $_FILES['image']['name'];
 
-		if (move_uploaded_file($_FILES['image']['tmp_name'], "uploads/")) {
+		if (move_uploaded_file($_FILES['image']['tmp_name'], "uploads/".$this->menus_mapper["image"])) {
 			//print "Uploaded successfully!";
 		 } else {
 			//print "Upload failed!";
