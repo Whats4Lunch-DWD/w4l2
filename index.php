@@ -392,7 +392,6 @@ $f3->route('GET /admin/restaurants/show/@id',
     $data = $controller->getRestaurant($args['id']);
     $f3->set('result',$data);
     //print_r($data);
-    $f3->set("location", $_GET["location"]);
     $f3->set('html_title','Restaurant Menu - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
     $f3->set('content','admin/menu.html');
     echo Template::instance()->render('layout.html');
