@@ -1,6 +1,11 @@
 <div class="content">
     <div class="main-content container">
         <h1>Orders</h1>
+
+        <div class="container admin-sub-menu">
+            <a href="{{ @BASE }}/admin" class="button">Dashboard</a>
+        </div>
+
         <check if="{{ @transactions.results }}">
             <true>
                 <repeat group="{{ @transactions.results }}" value="{{ @transaction }}">
