@@ -1,14 +1,14 @@
 <div class="content">
     <div class="main-content container">
         <h1>Edit Menu for {{ @resto_name }}</h1>
-        <form id="frmMenu" name="frmMenu" method="POST" action="{{ @BASE }}/admin/add_menu" enctype="multipart/form-data">
+        <form id="frmMenu" name="frmMenu" method="POST" action="{{ @BASE }}/admin/edit_menu" enctype="multipart/form-data">
             <input name="restaurant_id" value="{{ @menu.restaurant_id }}" type="hidden" />
             <div class="columns">
                 <div class="column label is-one-fifth">
                     Dish Name
                 </div>
                 <div class="column field">
-                    <input id="dish_name" name="dish_name" type="text" class="input" value="@menu.dish_name" />
+                    <input id="dish_name" name="dish_name" type="text" class="input" value="{{ @menu.dish_name }}" />
                 </div>
             </div>
             <div class="columns">
@@ -24,7 +24,7 @@
                     Description
                 </div>
                 <div class="column field">
-                    <textarea id="description" name="description" class="input">@menu.description</textarea>
+                    <textarea id="description" name="description" class="input">{{ @menu.description }}</textarea>
                 </div>
             </div>
             <div class="columns">
@@ -209,12 +209,12 @@
                     Price
                 </div>
                 <div class="column field">
-                    <input id="price" name="price" type="text" class="input" />
+                    <input id="price" name="price" type="text" class="input" value="{{ @menu.price }}" />
                 </div>
             </div>
             <div class="field is-grouped">
                 <div class="control">
-                    <button class="button is-primary">Create Dish</button>
+                    <button class="button is-primary">Edit Dish</button>
                     <a href="javascript:history.back();" class="button">Back</a>
                 </div>
             </div>
