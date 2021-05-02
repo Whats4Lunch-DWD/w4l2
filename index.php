@@ -204,7 +204,7 @@ $f3->route('GET /search',
       $sql = "select distinct restaurant_id, restaurant_name, restaurants.image from hazrulaz_whats4lunch2.menus inner join hazrulaz_whats4lunch2.restaurants on menus.restaurant_id=restaurants.id where ".$criteria;
       //echo $sql;
       $results_fullset = $f3->get('DB')->exec($sql);
-      echo sizeof($results_fullset);
+      echo random_int(0,sizeof($results_fullset));
 
       $f3->set('results',$f3->get('DB')->exec($sql));
 
