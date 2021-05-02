@@ -420,6 +420,8 @@ $f3->route('GET /admin/restaurants/show/@id',
 $f3->route('GET /admin/orders',
   function ($f3) {
     $controller = new TransactionsController;
+    $transactions = $controller->listTransactions();
+    $f3->set('transactions',$transactions);
     $f3->set('html_title','Manage Orders - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
     $f3->set('content','admin/orders.html');
     echo Template::instance()->render('layout.html');
