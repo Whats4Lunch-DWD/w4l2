@@ -191,3 +191,7 @@ footer.footer .container {
     /* identical to box height, or 137% */
     color: rgba(255, 255, 255, 0.7);
 }
+
+.admin-sub-menu {
+    padding-bottom: 10px;
+}
