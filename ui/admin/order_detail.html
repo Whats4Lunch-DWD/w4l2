@@ -72,6 +72,7 @@
                         <form id="frmStatus" name="frmStatus" method="POST">
                             <div class="columns">
                                 <div class="column">
+                                    <input type="hidden" name="id" value="{{ @transaction_cart_items.transactions.id }}" />
                                     <select name="status">
                                         <option value="out_for_delivery">Out For Delivery</option>
                                         <option value="delivered">Delivered</option>
