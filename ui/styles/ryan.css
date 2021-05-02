@@ -74,14 +74,14 @@ a {
 }
 
 .main-content {
-    padding-top: 3em;
-    padding-bottom: 12em;
+/*     padding-top: 3em;
+    padding-bottom: 12em; */
     min-height: 100vh !important;
     display: flex !important;
     flex-direction: column !important;
 } 
 
 footer.footer {
-    margin-top: auto !important;
+    margin-top: auto!important;
 } 
     
