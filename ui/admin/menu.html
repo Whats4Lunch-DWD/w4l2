@@ -16,6 +16,13 @@
                 </div>
             </true>
         </check>
+        <check if="{{ @addmenu_success=='editmenu' }}">
+            <true>
+                <div class="notification is-success">
+                    Menu edited successfully
+                </div>
+            </true>
+        </check>
 
         <div class="container admin-sub-menu">
             <a href="{{ @BASE }}/admin" class="button">Dashboard</a> <a href="{{ @BASE }}/admin/restaurants" class="button">Restaurants</a> <a href="{{ @BASE }}/admin/add_menu?restaurant={{ @resto_id }}" class="button">Add Menu</a>

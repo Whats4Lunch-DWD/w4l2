@@ -60,8 +60,23 @@ class RestaurantController {
 		return $menu;
 	}
 
-	public function editMenu() {
-		
+	public function editMenu($data) {
+		foreach($data as $key => $value) {
+        	$this->menus_mapper[$key]=$value;
+        }
+
+		$this->menus_mapper["image"] = $_FILES['image']['name'];
+
+		if ($this->menus_mapper["image"]!="") {
+			if (move_uploaded_file($_FILES['image']['tmp_name'], "uploads/".$this->menus_mapper["image"])) {
+				//print "Uploaded successfully!";
+			 } else {
+				//print "Upload failed!";
+			 }
+		}
+
+		$this->menus_mapper->save();
+		return $this->menus_mapper["id"];
 	}
 
 	public function addMenu($data) {
@@ -73,11 +88,13 @@ class RestaurantController {
 
 		$this->menus_mapper["image"] = $_FILES['image']['name'];
 
-		if (move_uploaded_file($_FILES['image']['tmp_name'], "uploads/".$this->menus_mapper["image"])) {
-			//print "Uploaded successfully!";
-		 } else {
-			//print "Upload failed!";
-		 }
+		if ($this->menus_mapper["image"]!="") {
+			if (move_uploaded_file($_FILES['image']['tmp_name'], "uploads/".$this->menus_mapper["image"])) {
+				//print "Uploaded successfully!";
+			 } else {
+				//print "Upload failed!";
+			 }
+		}
 
 		$this->menus_mapper->save();
 		return $this->menus_mapper["id"];

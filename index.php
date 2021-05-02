@@ -449,7 +449,7 @@ $f3->route('POST /admin/edit_menu/@id',
     $controller = new RestaurantController;
     $menu = $f3->get('POST');
     $controller->editMenu($menu);
-    $f3->reroute("/admin/restaurants/show/".$menu['restaurant_id']."?success=addmenu");
+    $f3->reroute("/admin/restaurants/show/".$menu['restaurant_id']."?success=editmenu");
   }
 );
 
