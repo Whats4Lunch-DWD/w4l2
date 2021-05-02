@@ -68,7 +68,7 @@ class RestaurantController {
 				// do nothing
 			} else {
 				if ($value=="") {
-					return array("err"=>"Everything is mandatory except image and description","menu_id"=>$data["id"]);
+					return array("err"=>"Everything is mandatory except image, description, allergen and diet","menu_id"=>$data["id"]);
 				}
 			}
         	$this->menus_mapper[$key]=$value;
@@ -96,7 +96,7 @@ class RestaurantController {
 				// do nothing
 			} else {
 				if ($value=="") {
-					return array("err"=>"Everything is mandatory except image and description","restaurant_id"=>$data["restaurant_id"]);
+					return array("err"=>"Everything is mandatory except image, description, allergen and diet","restaurant_id"=>$data["restaurant_id"]);
 				}
 			}
         	$this->menus_mapper[$key]=$value;
