@@ -54,6 +54,14 @@ class RestaurantController {
 		$this->mapper->erase();									// delete the DB record
 	}
 
+	public function showMenu() {
+
+	}
+
+	public function editMenu() {
+		
+	}
+
 	public function addMenu($data) {
 		$this->menus_mapper->dry();
 

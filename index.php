@@ -431,6 +431,26 @@ $f3->route('POST /admin/add_menu',
   }
 );
 
+$f3->route('GET /admin/edit_menu/@id',
+  function ($f3,$args) {
+    $controller = new RestaurantController;
+    $menu = $controller->showMenu($args['id']);
+    $f3->set('menu',$menu);
+    $f3->set('html_title','Add Menu - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
+    $f3->set('content','admin/add_menu.html');
+    echo Template::instance()->render('layout.html');
+  }
+);
+
+$f3->route('POST /admin/edit_menu/@id',
+  function ($f3,$args) {
+    $controller = new RestaurantController;
+    $menu = $f3->get('POST');
+    $controller->editMenu($menu);
+    $f3->reroute("/admin/restaurants/show/".$menu['restaurant_id']."?success=addmenu");
+  }
+);
+
   ////////////////////////
  // Run the F3 engine //
 ////////////////////////
