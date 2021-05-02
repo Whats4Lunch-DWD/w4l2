@@ -55,8 +55,9 @@ class RestaurantController {
 	}
 
 	public function addMenu($data) {
-		$this->menus_mapper->reset();
+		$this->menus_mapper->dry();
 		$this->menus_mapper->save();
+		return $this->menus_mapper["id"];
 	}
 
 }
