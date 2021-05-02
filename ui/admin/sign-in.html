@@ -6,6 +6,11 @@
                 <div class="notification is-warning">The password is incorrect</div>
             </true>
         </check>
+        <check if="{{ @err=='notadmin' }}">
+            <true>
+                <div class="notification is-warning">This user is not an admin</div>
+            </true>
+        </check>
         <check if="{{ @signup }}">
             <true>
                 <div class="notification is-success">
