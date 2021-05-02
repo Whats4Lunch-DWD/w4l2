@@ -451,7 +451,7 @@ $f3->route('POST /admin/edit_menu/@id',
   function ($f3,$args) {
     $controller = new RestaurantController;
     $menu = $f3->get('POST');
-    $response = $controller->editMenu($menu);
+    $response = $controller->editMenu($menu); print_r($response); die();
     if ($response["err"] == "Everything is mandatory except image and description") {
       $f3->reroute("/admin/edit_menu/".$response["menu_id"]."?err=".$response["err"]);  
     }
