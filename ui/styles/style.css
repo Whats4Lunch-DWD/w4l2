@@ -206,3 +206,7 @@ footer.footer a {
     text-align: center;
     margin: auto auto;
 }
+
+.payment-method, .delivery-location {
+    padding: 10px;
+}
