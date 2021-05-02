@@ -124,7 +124,7 @@ class UsersController {
                 $_SESSION["username"]=$user["username"];
                 $_SESSION["name"]=$user["name"];
                 $_SESSION["phone"]=$user["phone"];
-                $_SESSION["role"]=$user["admin"];
+                $_SESSION["role"]=$user["role"];
                 $this->f->reroute("/admin");
             } else {
                 $this->f->reroute("/admin/signin?err=notadmin");
