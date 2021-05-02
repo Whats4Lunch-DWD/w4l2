@@ -1,6 +1,20 @@
 <div class="content">
     <div class="main-content container">
         <h1>Orders</h1>
-        
+        <check if="{{ @transactions.results }}">
+            <true>
+                <repeat group="{{ @transactions.results }}" value="{{ @transaction }}">
+                    <div class="columns">
+                        <div class="column">
+                            Order Num: <a href="{{ @BASE }}/admin_transactions/{{ @transaction.id }}">{{ @transaction.id }}</a> <br />
+                            Total Price: ${{ @transaction.total_price+3 }}
+                        </div>
+                    </div>
+                </repeat>
+            </true>
+            <false>
+                No recent transactions available.
+            </false>
+        </check>
     </div>
 </div>
