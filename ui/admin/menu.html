@@ -6,7 +6,7 @@
 
         <check if="{{ @err!='' }}">
             <true>
-                <div class="notification is-warning">Test error</div>
+                <div class="notification is-warning">{{ @err }}</div>
             </true>
         </check>
         <check if="{{ @addmenu_success=='addmenu' }}">
