@@ -55,7 +55,7 @@ class RestaurantController {
 	}
 
 	public function showMenu($id) {
-		$menu = $this->menu_mapper->load(['id=?', $id]);
+		$menu = $this->menus_mapper->load(['id=?', $id]);
 
 		return $menu;
 	}
