@@ -70,7 +70,7 @@
                         <p><strong>Payment Method</strong>: {{ @transaction_cart_items.transaction->payment_method }}</p>
                     </div>
                     <div class="columns delivery-location">
-                        <p><strong>Delivery Location</strong>{{ @transaction_cart_items.transaction->address1 }} {{ @transaction_cart_items.transaction->address2 }} {{ @transaction_cart_items.transaction->postal_code }}</p>
+                        <p><strong>Delivery Location</strong>: {{ @transaction_cart_items.transaction->address1 }} {{ @transaction_cart_items.transaction->address2 }} {{ @transaction_cart_items.transaction->postal_code }}</p>
                     </div>
                 </div>
             </div>
