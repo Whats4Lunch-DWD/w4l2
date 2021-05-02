@@ -201,6 +201,8 @@ footer.footer a {
 }
 
 .txnicon {
-    height: 100px !important;
-    max-width: auto !important;
+    height: 40% !important;
+    width: 40% !important;
+    text-align: center;
+    margin: auto auto;
 }
