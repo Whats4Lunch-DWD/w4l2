@@ -145,18 +145,6 @@ $f3->route('GET /signout',
   }
 );
 
-$f3->route('GET /admin',
-  function ($f3) {
-    // restos
-    // menus
-    // orders
-
-    $f3->set('html_title','Admin - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
-    $f3->set('content','admin/index.html');
-    echo Template::instance()->render('layout.html');
-  }
-);
-
 $f3->route('GET /profile',
   function ($f3) {
     $controller = new UsersController;
@@ -362,6 +350,34 @@ $f3->route('GET /admin/sign-in',
   function ($f3) {
     $f3->set('html_title','Admin Sign In - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
     $f3->set('content','admin/sign-in.html');
+    echo Template::instance()->render('layout.html');
+  }
+);
+
+$f3->route('GET /admin',
+  function ($f3) {
+    // restos
+    // menus
+    // orders
+
+    $f3->set('html_title','Admin - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
+    $f3->set('content','admin/index.html');
+    echo Template::instance()->render('layout.html');
+  }
+);
+
+$f3->route('GET /admin/restaurants',
+  function ($f3) {
+    $f3->set('html_title','Manage Restaurants - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
+    $f3->set('content','admin/restaurants.html');
+    echo Template::instance()->render('layout.html');
+  }
+);
+
+$f3->route('GET /admin/orders',
+  function ($f3) {
+    $f3->set('html_title','Manage Orders - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
+    $f3->set('content','admin/orders.html');
     echo Template::instance()->render('layout.html');
   }
 );
