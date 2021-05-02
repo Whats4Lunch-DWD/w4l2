@@ -1,6 +1,223 @@
 <div class="content">
     <div class="main-content container">
-        <h1>Edit Menu</h1>
-        
+        <h1>Edit Menu for {{ @resto_name }}</h1>
+        <form id="frmMenu" name="frmMenu" method="POST" action="{{ @BASE }}/admin/add_menu" enctype="multipart/form-data">
+            <input name="restaurant_id" value="{{ @menu.restaurant_id }}" type="hidden" />
+            <div class="columns">
+                <div class="column label is-one-fifth">
+                    Dish Name
+                </div>
+                <div class="column field">
+                    <input id="dish_name" name="dish_name" type="text" class="input" value="@menu.dish_name" />
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column label is-one-fifth">
+                    Image
+                </div>
+                <div class="column field">
+                    <input id="image" name="image" type="file" class="input" /> Current Image: {{ @menu.image }}
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column label is-one-fifth">
+                    Description
+                </div>
+                <div class="column field">
+                    <textarea id="description" name="description" class="input">@menu.description</textarea>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column label is-one-fifth">
+                    Diet this dish is suitable for
+                </div>
+                <div class="column field">
+                    <div class="select">
+                        <select id="diet" name="diet" class="home-select">
+                            <option disabled="disabled" selected="selected" hidden="hidden">Select a diet restriction...</option>
+                            
+                            <check if="{{ @menu.diet=='None' }}">
+                                <true>
+                                    <option selected="selected">None</option>
+                                </true>
+                                <false>
+                                    <option>None</option>
+                                </false>
+                            </check>
+                            <check if="{{ @menu.diet=='Halal' }}">
+                                <true>
+                                    <option selected="selected">Halal</option>
+                                </true>
+                                <false>
+                                    <option>Halal</option>
+                                </false>
+                            </check>
+                            <check if="{{ @menu.diet=='Keto' }}">
+                                <true>
+                                    <option selected="selected">Keto</option>
+                                </true>
+                                <false>
+                                    <option>Keto</option>
+                                </false>
+                            </check>
+                            <check if="{{ @menu.diet=='Kosher' }}">
+                                <true>
+                                    <option selected="selected">Kosher</option>
+                                </true>
+                                <false>
+                                    <option>Kosher</option>
+                                </false>
+                            </check>
+                            <check if="{{ @menu.diet=='No Beef' }}">
+                                <true>
+                                    <option selected="selected">No Beef</option>
+                                </true>
+                                <false>
+                                    <option>No Beef</option>
+                                </false>
+                            </check>
+                            <check if="{{ @menu.diet=='Vegan' }}">
+                                <true>
+                                    <option selected="selected">Vegan</option>
+                                </true>
+                                <false>
+                                    <option>Vegan</option>
+                                </false>
+                            </check>
+                            <check if="{{ @menu.diet=='Vegetarian' }}">
+                                <true>
+                                    <option selected="selected">Vegetarian</option>
+                                </true>
+                                <false>
+                                    <option>Vegetarian</option>
+                                </false>
+                            </check>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column label is-one-fifth">
+                    Allergen this dish contains 
+                </div>
+                <div class="column field">
+                    <div class="select">
+                        <select id="allergy" name="allergen" class="home-select">
+                            <option disabled="disabled" selected="selected" hidden="hidden">Select an allergen restriction...</option>
+                            <check if="{{ @menu.allergen=='None' }}">
+                                <true>
+                                    <option selected="selected">None</option>
+                                </true>
+                                <false>
+                                    <option>None</option>
+                                </false>
+                            </check>
+                            <check if="{{ @menu.allergen=='Corn' }}">
+                                <true>
+                                    <option selected="selected">Corn</option>
+                                </true>
+                                <false>
+                                    <option>Corn</option>
+                                </false>
+                            </check>
+                            <check if="{{ @menu.allergen=='Egg' }}">
+                                <true>
+                                    <option selected="selected">Egg</option>
+                                </true>
+                                <false>
+                                    <option>Egg</option>
+                                </false>
+                            </check>
+                            <check if="{{ @menu.allergen=='Fish' }}">
+                                <true>
+                                    <option selected="selected">Fish</option>
+                                </true>
+                                <false>
+                                    <option>Fish</option>
+                                </false>
+                            </check>
+                            <check if="{{ @menu.allergen=='Meat' }}">
+                                <true>
+                                    <option selected="selected">Meat</option>
+                                </true>
+                                <false>
+                                    <option>Meat</option>
+                                </false>
+                            </check>
+                            <check if="{{ @menu.allergen=='Milk' }}">
+                                <true>
+                                    <option selected="selected">Milk</option>
+                                </true>
+                                <false>
+                                    <option>Milk</option>
+                                </false>
+                            </check>
+                            <check if="{{ @menu.allergen=='Peanut' }}">
+                                <true>
+                                    <option selected="selected">Peanut</option>
+                                </true>
+                                <false>
+                                    <option>Peanut</option>
+                                </false>
+                            </check>
+                            <check if="{{ @menu.allergen=='Shellfish' }}">
+                                <true>
+                                    <option selected="selected">Shellfish</option>
+                                </true>
+                                <false>
+                                    <option>Shellfish</option>
+                                </false>
+                            </check>
+                            <check if="{{ @menu.allergen=='Soy' }}">
+                                <true>
+                                    <option selected="selected">Soy</option>
+                                </true>
+                                <false>
+                                    <option>Soy</option>
+                                </false>
+                            </check>
+                            <check if="{{ @menu.allergen=='Tree Nut' }}">
+                                <true>
+                                    <option selected="selected">Tree Nut</option>
+                                </true>
+                                <false>
+                                    <option>Tree Nut</option>
+                                </false>
+                            </check>
+                            <check if="{{ @menu.allergen=='Wheat' }}">
+                                <true>
+                                    <option selected="selected">Wheat</option>
+                                </true>
+                                <false>
+                                    <option>Wheat</option>
+                                </false>
+                            </check>
+                            <check if="{{ @menu.allergen=='FPIES' }}">
+                                <true>
+                                    <option selected="selected">FPIES</option>
+                                </true>
+                                <false>
+                                    <option>FPIES</option>
+                                </false>
+                            </check>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column label is-one-fifth">
+                    Price
+                </div>
+                <div class="column field">
+                    <input id="price" name="price" type="text" class="input" />
+                </div>
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-primary">Create Dish</button>
+                    <a href="javascript:history.back();" class="button">Back</a>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
