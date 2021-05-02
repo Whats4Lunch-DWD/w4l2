@@ -61,6 +61,14 @@ class RestaurantController {
         	$this->menus_mapper[$key]=$value;
         }
 
+		$this->menus_mapper["image"] = $_FILES['image']['name'];
+
+		if (move_uploaded_file($_FILES['image']['tmp_name'], "/uploads")) {
+			//print "Uploaded successfully!";
+		 } else {
+			//print "Upload failed!";
+		 }
+
 		$this->menus_mapper->save();
 		return $this->menus_mapper["id"];
 	}
