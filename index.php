@@ -201,16 +201,10 @@ $f3->route('GET /search',
       if ($query["allergy"]!="") {
         $criteria .= "and allergen not like '%".$query["allergy"]."%'";
       }
+      $criteria .= " ORDER BY RAND() LIMIT 3";
+
       $sql = "select distinct restaurant_id, restaurant_name, restaurants.image from hazrulaz_whats4lunch2.menus inner join hazrulaz_whats4lunch2.restaurants on menus.restaurant_id=restaurants.id where ".$criteria;
       //echo $sql;
-      $results_fullset = $f3->get('DB')->exec($sql);
-      $first = random_int(0,sizeof($results_fullset));
-      echo $first." "; unset($results_fullset[$first]);
-      $second = random_int(0,sizeof($results_fullset));
-      echo $second." "; unset($results_fullset[$second]);
-      $third = random_int(0,sizeof($results_fullset));
-      echo $third." "; unset($results_fullset[$third]);
-      echo sizeof($results_fullset);
 
       $f3->set('results',$f3->get('DB')->exec($sql));
 
