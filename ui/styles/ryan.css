@@ -73,9 +73,16 @@ a {
     margin-bottom: 0 !important;
 }
 
-/* .main-content {
+.content {
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;  
+}
+
+.main-content {
     padding-top: 3em;
-    padding-bottom: 12em !important;
-} */
+    padding-bottom: 12em;
+    margin: auto 0 !important;
+} 
     
     
