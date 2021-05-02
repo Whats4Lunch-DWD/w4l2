@@ -205,6 +205,8 @@ $f3->route('GET /search',
       //echo $sql;
       $results_fullset = $f3->get('DB')->exec($sql);
       echo random_int(0,sizeof($results_fullset));
+      echo random_int(0,sizeof($results_fullset));
+      echo random_int(0,sizeof($results_fullset));
 
       $f3->set('results',$f3->get('DB')->exec($sql));
 
