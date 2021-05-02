@@ -51,3 +51,20 @@ a {
     margin-right: 0em !important;
     text-align: center;
 }
+
+.button.is-primary {
+    background-color: #5AC475 !important;
+    border-color: transparent;
+    color: #fff;
+}   
+
+.button.is-primary.is-hovered, .button.is-primary:hover {
+    background-color: #5AC475 !important;
+    border-color: transparent;
+    color: #fff;
+}
+
+
+
+    
+    
