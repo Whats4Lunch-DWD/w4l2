@@ -440,8 +440,9 @@ $f3->route('GET /admin/orders/@id',
 );
 
 $f3->route('POST /admin/orders/@id',
-  function ($f3, $args) {
+  function ($f3) {
     $controller = new TransactionsController;
+    $args = $f3->get('POST');
     $data = $controller->updateTransactionStatus($args);
     $f3->set('transaction_cart_items',$data);
     $f3->set('html_title','Order Detail - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
