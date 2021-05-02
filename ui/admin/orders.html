@@ -11,7 +11,7 @@
                 <repeat group="{{ @transactions.results }}" value="{{ @transaction }}">
                     <div class="columns">
                         <div class="column">
-                            Order Num: <a href="{{ @BASE }}/admin_transactions/{{ @transaction.id }}">{{ @transaction.id }}</a> <br />
+                            Order Num: <a href="{{ @BASE }}/orders/{{ @transaction.id }}">{{ @transaction.id }}</a> <br />
                             Total Price: ${{ @transaction.total_price+3 }}
                         </div>
                     </div>
