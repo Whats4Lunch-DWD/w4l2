@@ -58,6 +58,12 @@ class TransactionsController {
         return $this->mapper["id"];
     }
 
+    public function listTransactions() {
+        $transactions["results"] = $this->mapper->find(array("order"=>"status desc"));
+
+        return $transactions;
+    }
+
     public function getTransaction($id) {
         $transaction = $this->mapper->load(["id=?",$id]);
         $cart_items = $this->cart_items_mapper->find(["cart_id=?",$transaction["cart_id"]]);
@@ -80,4 +86,6 @@ class TransactionsController {
 
         $this->user_mapper->save();
     }
+
+
 }
