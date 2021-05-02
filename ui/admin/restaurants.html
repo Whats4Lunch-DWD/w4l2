@@ -1,6 +1,7 @@
 <div class="content">
     <div class="main-content container">
         <h2 class="title">Restaurants</h2>
+        <a href="{{ @BASE }}/admin/add_restaurant" class="button">Add Restaurant</a>
         <check if="{{ @records.results }}">
             <true>
                 <set ctr="{{ 0 }}" />
@@ -24,7 +25,7 @@
                                 </figure>
                                 </div>
                                 <div class="card-content">
-                                    <p class="c-title is-4"><a href="https://hazrulazhar.edinburgh.domains/w4l2/restaurants/show/{{ trim(@record.id) }}">{{ trim(@record.restaurant_name) }}</a></p>
+                                    <p class="c-title is-4"><a href="https://hazrulazhar.edinburgh.domains/w4l2/admin/restaurants/show/{{ trim(@record.id) }}">{{ trim(@record.restaurant_name) }}</a></p>
                                 </div>
                             </div>
                         </div>
