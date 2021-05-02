@@ -1,8 +1,11 @@
 <div class="content">
     <div class="main-content container">
         <h2 class="title">Restaurants</h2>
-        <a href="{{ @BASE }}/admin/add_restaurant" class="button">Add Restaurant</a>
-        <br />
+        
+        <div class="container">
+            <a href="{{ @BASE }}/admin/add_restaurant" class="button">Add Restaurant</a>
+        </div>
+
         <check if="{{ @records.results }}">
             <true>
                 <set ctr="{{ 0 }}" />
