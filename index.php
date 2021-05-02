@@ -437,7 +437,7 @@ $f3->route('GET /admin/edit_menu/@id',
     $menu = $controller->showMenu($args['id']);
     $f3->set('menu',$menu);
     $f3->set('html_title','Add Menu - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
-    $f3->set('content','admin/add_menu.html');
+    $f3->set('content','admin/edit_menu.html');
     echo Template::instance()->render('layout.html');
   }
 );
