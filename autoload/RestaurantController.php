@@ -62,6 +62,11 @@ class RestaurantController {
 
 	public function editMenu($data) {
 		foreach($data as $key => $value) {
+			if ($key != "image" or $key != "description") {
+				if ($value=="") {
+					return array("err"=>"Everything is mandatory except image and description","menu_id"=>$data["id"]);
+				}
+			}
         	$this->menus_mapper[$key]=$value;
         }
 
@@ -83,6 +88,11 @@ class RestaurantController {
 		$this->menus_mapper->dry();
 
 		foreach($data as $key => $value) {
+			if ($key != "image" or $key != "description") {
+				if ($value=="") {
+					return array("err"=>"Everything is mandatory except image and description","restaurant_id"=>$data["restaurant_id"]);
+				}
+			}
         	$this->menus_mapper[$key]=$value;
         }
 
