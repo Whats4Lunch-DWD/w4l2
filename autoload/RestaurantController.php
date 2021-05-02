@@ -27,6 +27,17 @@ class RestaurantController {
 			}
         	$this->mapper[$key]=$value;
         }
+
+		$this->mapper["image"] = $_FILES['image']['name'];
+
+		if ($this->mapper["image"]!="") {
+			if (move_uploaded_file($_FILES['image']['tmp_name'], "uploads/".$this->mapper["image"])) {
+				//print "Uploaded successfully!";
+			 } else {
+				//print "Upload failed!";
+			 }
+		}
+
 		$this->mapper->save();									// save new record with these fields
 		return $this->mapper["id"];
 	}
