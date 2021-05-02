@@ -67,7 +67,7 @@ a {
 .content {
     background-color: #FAF8F5 !important; 
     background: url("../images/illustration background.png")!important;
-    background-repeat: no-repeat;
+    background-repeat-x: no-repeat;
     text-align: center;
     margin-bottom: 0 !important;
 }
