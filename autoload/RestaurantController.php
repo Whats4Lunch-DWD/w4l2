@@ -61,6 +61,7 @@ class RestaurantController {
 	}
 
 	public function editMenu($data) {
+		print_r($data); die();
 		foreach($data as $key => $value) {
 			if ($key != "image" or $key != "description") {
 				if ($value=="") {
