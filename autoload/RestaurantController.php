@@ -57,6 +57,7 @@ class RestaurantController {
 	public function addMenu($data) {
 		$this->menus_mapper->reset();
 		$this->menus_mapper->save();
+		$this->f3->reroute("/admin/restaurants/show/".$data['restaurant_id']."?success=addmenu");
 	}
 
 }
