@@ -409,7 +409,10 @@ $f3->route('GET /admin/orders',
 
 $f3->route('GET /admin/add_menu',
   function ($f3) {
+    $controller = new RestaurantController;
+    $restaurant = $controller->getRestaurant($_GET['restaurant']);
     $f3->set('resto_id',$_GET['restaurant']);
+    $f3->set('resto_name',$restaurant['restaurant']);
     $f3->set('html_title','Add Menu - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
     $f3->set('content','admin/add_menu.html');
     echo Template::instance()->render('layout.html');

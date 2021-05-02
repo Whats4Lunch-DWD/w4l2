@@ -1,7 +1,7 @@
 <div class="content">
     <div class="main-content container">
         <h1>Add Menu</h1>
-        {{ @resto_id }}
+        Adding menu for {{ @resto_name }}
         <form id="frmMenu" name="frmMenu" method="POST" action="{{ @BASE }}/admin/add_menu">
             <input name="restaurant_id" value="{{ @resto_id }}" type="hidden" />
             <div class="columns">
