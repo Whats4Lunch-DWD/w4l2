@@ -368,6 +368,9 @@ $f3->route('GET /admin',
 
 $f3->route('GET /admin/restaurants',
   function ($f3) {
+    $controller = new RestaurantController;
+    $data = $controller->listRestaurants();
+    $f3->set("records", $data);
     $f3->set('html_title','Manage Restaurants - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
     $f3->set('content','admin/restaurants.html');
     echo Template::instance()->render('layout.html');

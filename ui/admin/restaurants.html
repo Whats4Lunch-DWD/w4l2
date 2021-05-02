@@ -1,6 +1,51 @@
 <div class="content">
     <div class="main-content container">
-        <h1>Restaurants</h1>
-        
+        <h2 class="title">Restaurants</h2>
+        <check if="{{ @records.results }}">
+            <true>
+                <set ctr="{{ 0 }}" />
+                <check if="{{ @ctr }}">
+                    <true></true>
+                    <false><div class="columns"></false>
+                </check>
+                <repeat group="{{ @records.results }}" value="{{ @record }}" counter="{{ @ctr }}">
+                        <div class="column is-one-third">
+                            <div class="card">
+                                <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <check if="{{ @record.image }}">
+                                        <true>
+                                            <img src="https://hazrulazhar.edinburgh.domains/w4l2/ui/images/restaurants/{{ trim(@record.image) }}" alt="{{ trim(@record.image) }} image">
+                                        </true>
+                                        <false>
+                                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="{{ trim(@record.image) }} image">
+                                        </false>
+                                    </check>
+                                </figure>
+                                </div>
+                                <div class="card-content">
+                                    <p class="c-title is-4"><a href="https://hazrulazhar.edinburgh.domains/w4l2/restaurants/show/{{ trim(@record.id) }}">{{ trim(@record.restaurant_name) }}</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <check if="{{ @ctr%3 }}">
+                            <true></true>
+                            <false>
+                                <check if="{{ @records.total_results == @ctr }}">
+                                    <true>
+                                        </div>
+                                    </true>
+                                    <false>
+                                        </div><div class="columns">
+                                    </false>
+                                </check>
+                            </false>
+                        </check>
+                </repeat>
+            </true>
+            <false>
+                <p>No restaurants are available.</p>
+            </false>
+        </check>
     </div>
 </div>
