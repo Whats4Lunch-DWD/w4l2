@@ -1,6 +1,11 @@
 <div class="content">
     <div class="main-content container">
         <h1>Edit Menu for {{ @resto_name }}</h1>
+        <check if="{{ @err!='' }}">
+            <true>
+                <div class="notification is-warning">{{ @err }}</div>
+            </true>
+        </check>
         <form id="frmMenu" name="frmMenu" method="POST" action="{{ @BASE }}/admin/edit_menu/{{ @menu.id }}" enctype="multipart/form-data">
             <input name="id" value="{{ @menu.id }}" type="hidden" />
             <input name="restaurant_id" value="{{ @menu.restaurant_id }}" type="hidden" />
