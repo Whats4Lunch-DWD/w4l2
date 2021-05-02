@@ -150,6 +150,10 @@ $f3->route('GET /admin',
     // restos
     // menus
     // orders
+
+    $f3->set('html_title','Admin - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
+    $f3->set('content','admin/index.html');
+    echo Template::instance()->render('layout.html');
   }
 );
 
