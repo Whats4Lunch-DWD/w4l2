@@ -69,6 +69,14 @@
                     </div>
                     <div class="columns status">
                         <p><strong>Status</strong>: {{ @transaction_cart_items.transaction->status }}</p>
+                        <form id="frmStatus" name="frmStatus" method="POST">
+                            <div class="columns">
+                                <div class="column">
+                                    <button class="button" value="out_for_Delivery">Out For Delivery</button> 
+                                    <button class="button" value="delivered">Delivered</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
