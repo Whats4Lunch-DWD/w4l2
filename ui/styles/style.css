@@ -193,7 +193,7 @@ footer.footer .container {
 }
 
 footer.footer a {
-    color: #5AC475;
+    color: #5AC475 !important;
 }
 
 .admin-sub-menu {
