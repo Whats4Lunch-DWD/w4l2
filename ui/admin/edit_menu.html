@@ -1,7 +1,7 @@
 <div class="content">
     <div class="main-content container">
         <h1>Edit Menu for {{ @resto_name }}</h1>
-        <form id="frmMenu" name="frmMenu" method="POST" action="{{ @BASE }}/admin/edit_menu" enctype="multipart/form-data">
+        <form id="frmMenu" name="frmMenu" method="POST" action="{{ @BASE }}/admin/edit_menu/{{ @menu.id }}" enctype="multipart/form-data">
             <input name="restaurant_id" value="{{ @menu.restaurant_id }}" type="hidden" />
             <div class="columns">
                 <div class="column label is-one-fifth">
