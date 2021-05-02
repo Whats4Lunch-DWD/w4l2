@@ -435,6 +435,8 @@ $f3->route('GET /admin/edit_menu/@id',
   function ($f3,$args) {
     $controller = new RestaurantController;
     $menu = $controller->showMenu($args['id']);
+    $restaurant = $controller->getRestaurant($menu['restaurant_id']);
+    $f3->set('resto_name',$restaurant["restaurant"]["restaurant_name"]);
     $f3->set('menu',$menu);
     $f3->set('html_title','Add Menu - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
     $f3->set('content','admin/edit_menu.html');
