@@ -207,10 +207,10 @@ $f3->route('GET /search',
       $first = random_int(0,sizeof($results_fullset));
       echo $first." "; unset($results_fullset[$first]);
       $second = random_int(0,sizeof($results_fullset));
-      echo $second." "; unset($results_fullset[$first]);
+      echo $second." "; unset($results_fullset[$second]);
       $third = random_int(0,sizeof($results_fullset));
-      echo $third." "; unset($results_fullset[$first]);
-      
+      echo $third." "; unset($results_fullset[$third]);
+      echo sizeof($results_fullset);
 
       $f3->set('results',$f3->get('DB')->exec($sql));
 
