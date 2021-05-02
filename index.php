@@ -424,9 +424,7 @@ $f3->route('POST /admin/add_menu',
     $controller = new RestaurantController;
     $menu = $f3->get('POST');
     $controller->addMenu($menu);
-    $f3->set('html_title','Add Menu - Whats4Lunch - The World\'s easiest Food Delivery for people with diets and allergies');
-    $f3->set('content','admin/add_menu.html');
-    echo Template::instance()->render('layout.html');
+    $f3->reroute("/admin/restaurants/show/".$menu['restaurant_id']."?success=addmenu");
   }
 );
 
