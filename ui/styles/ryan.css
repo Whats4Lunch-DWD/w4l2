@@ -86,3 +86,8 @@ a {
     flex-shrink: 1;
     margin-left: .75rem !important;
 }
+
+.payment-method, .delivery-location {
+    padding: 10px;
+    margin-bottom: .75rem !important;
+}
