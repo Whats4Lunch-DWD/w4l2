@@ -102,3 +102,7 @@ a {
     margin-right: -.75rem;
     margin-top: -.75rem;
 }
+
+.content p:not(:last-child){
+    margin-bottom: 3em;
+}
