@@ -93,7 +93,7 @@ p.title {
     background: url("../images/background.png");
     background-position: 0 0;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: contain;
     text-align: center;
     margin-bottom: 0 !important;
 }
