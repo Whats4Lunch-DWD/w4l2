@@ -31,7 +31,7 @@ h2.title, span.sub-title, p.title {
 
 p.title {
     color: #221F20 !important;
-    font-size: 1rem !important;
+/*     font-size: 1rem !important; */
 }
 
 .myhero {
