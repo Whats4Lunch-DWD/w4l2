@@ -84,7 +84,7 @@ a {
 }
 
 .payment-method, .delivery-location {
-    padding: 10px;
+    padding: 12px !important;
     margin-bottom: .2rem !important;
 }
 
