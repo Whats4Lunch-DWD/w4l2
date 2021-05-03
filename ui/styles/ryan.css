@@ -104,5 +104,5 @@ a {
 }
 
 .content p:not(:last-child){
-    margin-bottom: 3em;
+    margin-bottom: 5em;
 }
