@@ -35,10 +35,10 @@ p.title {
 }
 /*
 .myhero {
-    background-color: #B0D9BA;
+/*     background-color: #B0D9BA !important; */
     background: url("../images/hero2.png") rgba(0, 0, 0, 0) 50% 50% !important;
     background-size:cover;
-    background-repeat:no-repeat;
+/*     background-repeat:no-repeat !important; */
     background-blend-mode: multiply;
 }
 */
