@@ -84,5 +84,5 @@ a {
     flex-basis: 0;
     flex-grow: 1;
     flex-shrink: 1;
-    margin-left: 1rem !important;
+    margin-left: .75rem !important;
 }
