@@ -96,3 +96,9 @@ a {
     text-align: left !important;
     margin-left: .7em !important;
 } */
+
+.columns {
+/*     margin-left: -.75rem; */
+    margin-right: -.75rem;
+    margin-top: -.75rem;
+}
