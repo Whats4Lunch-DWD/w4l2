@@ -33,7 +33,7 @@ p.title {
     color: #221F20 !important;
     font-size: 2rem !important;
 }
-/*
+
 .myhero {
 /*     background-color: #B0D9BA !important; */
     background: url("../images/hero2.png") rgba(0, 0, 0, 0) 50% 50% !important;
@@ -41,7 +41,6 @@ p.title {
 /*     background-repeat:no-repeat !important; */
     background-blend-mode: multiply;
 }
-*/
 
 a {
     color:#221F20 !important;

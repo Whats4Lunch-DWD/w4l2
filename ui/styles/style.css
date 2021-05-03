@@ -7,10 +7,9 @@
 }
 
 .myhero {
-    background-color: #B0D9BA;
     background: url("../images/hero2.png") rgba(0, 0, 0, 0.25) 50% 50% !important;
     background-size: cover !important;
-    background-repeat:no-repeat;
+    background-repeat:no-repeat !important;
     background-blend-mode: multiply !important;
 }
 
