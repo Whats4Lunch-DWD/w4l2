@@ -103,6 +103,6 @@ a {
     margin-top: -.75rem;
 }
 
-/* .content p:not(:last-child){
-    margin-bottom: 5em;
-} */
+.content p:not(:last-child){
+    margin-bottom: 2em;
+} 
