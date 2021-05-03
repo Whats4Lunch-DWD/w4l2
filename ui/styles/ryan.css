@@ -91,3 +91,7 @@ a {
     padding: 10px;
     margin-bottom: .2rem !important;
 }
+
+.content h3 {
+    margin-left: .5em !important;
+}
